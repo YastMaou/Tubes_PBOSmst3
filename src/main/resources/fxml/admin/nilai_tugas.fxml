@@ -94,8 +94,9 @@
                     <Label fx:id="lblDetailTanggal" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
                 </GridPane>
                 
-                <Button fx:id="btnLihatFile" text="Lihat File Tugas" onAction="#handleLihatFile" disabled="true"
-                       style="-fx-background-color: #9b59b6; -fx-text-fill: white; -fx-background-radius: 8; -fx-padding: 5 10; -fx-font-size: 12px;"/>
+                <Button fx:id="btnLihatFile" text="Lihat File Tugas" onAction="#handleLihatFile" disable="true"
+
+                        style="-fx-background-color: #9b59b6; -fx-text-fill: white; -fx-background-radius: 8; -fx-padding: 5 10; -fx-font-size: 12px;"/>
             </VBox>
             
             <!-- Input Nilai -->
@@ -112,12 +113,15 @@
             
             <!-- Action Buttons -->
             <HBox spacing="15" alignment="CENTER" style="-fx-padding: 15 0 0 0;">
-                <Button fx:id="btnBeriNilai" text="Beri Nilai" onAction="#handleBeriNilai" disabled="true"
-                       style="-fx-background-color: #27ae60; -fx-text-fill: white; -fx-background-radius: 8; -fx-padding: 10 20;"/>
-                <Button fx:id="btnUpdateNilai" text="Update Nilai" onAction="#handleUpdateNilai" disabled="true"
-                       style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-background-radius: 8; -fx-padding: 10 20;"/>
-                <Button fx:id="btnHapusNilai" text="Hapus Nilai" onAction="#handleHapusNilai" disabled="true"
-                       style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-background-radius: 8; -fx-padding: 10 20;"/>
+                <Button fx:id="btnBeriNilai" text="Beri Nilai" onAction="#handleBeriNilai" disable="true"
+
+                        style="-fx-background-color: #27ae60; -fx-text-fill: white; -fx-background-radius: 8; -fx-padding: 10 20;"/>
+                <Button fx:id="btnUpdateNilai" text="Update Nilai" onAction="#handleUpdateNilai" disable="true"
+
+                        style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-background-radius: 8; -fx-padding: 10 20;"/>
+                <Button fx:id="btnHapusNilai" text="Hapus Nilai" onAction="#handleHapusNilai" disable="true"
+
+                        style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-background-radius: 8; -fx-padding: 10 20;"/>
             </HBox>
         </VBox>
     </HBox>
