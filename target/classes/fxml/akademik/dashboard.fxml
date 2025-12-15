@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+
+<StackPane xmlns="http://javafx.com/javafx/11.0.1" 
+           xmlns:fx="http://javafx.com/fxml/1" 
+           fx:controller="com.projektestsiak.controllers.akademik.DashboardController"
+           style="-fx-background-color: #f5f6fa;">
+
+    <VBox spacing="20" style="-fx-padding: 30;">
+        <!-- Header -->
+        <HBox spacing="20" alignment="CENTER_LEFT">
+            <VBox spacing="5">
+                <Label fx:id="welcomeLabel" style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;" />
+                <Label fx:id="userInfoLabel" style="-fx-font-size: 14px; -fx-text-fill: #7f8c8d;" />
+            </VBox>
+            <Button text="Logout" onAction="#handleLogout" 
+                   style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-background-radius: 8; -fx-padding: 8 16;" />
+        </HBox>
+
+        <!-- Menu Grid -->
+        <HBox spacing="20" alignment="CENTER">
+            <VBox spacing="15" alignment="CENTER" style="-fx-background-color: white; -fx-background-radius: 15; -fx-padding: 30; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 5);">
+                <Label text="📅" style="-fx-font-size: 48px;" />
+                <Label text="Jadwal Akademik" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;" />
+                <Button text="Lihat Jadwal" onAction="#handleJadwal" 
+                       style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-background-radius: 8; -fx-padding: 10 20;" />
+            </VBox>
+
+            <VBox spacing="15" alignment="CENTER" style="-fx-background-color: white; -fx-background-radius: 15; -fx-padding: 30; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 5);">
+                <Label text="📝" style="-fx-font-size: 48px;" />
+                <Label text="Tugas dan Pengumpulan" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;" />
+                <Button text="Kelola Tugas" onAction="#handleTugas" 
+                       style="-fx-background-color: #9b59b6; -fx-text-fill: white; -fx-background-radius: 8; -fx-padding: 10 20;" />
+            </VBox>
+
+            <VBox spacing="15" alignment="CENTER" style="-fx-background-color: white; -fx-background-radius: 15; -fx-padding: 30; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 5);">
+                <Label text="➕" style="-fx-font-size: 48px;" />
+                <Label text="Pelajaran Tambahan" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;" />
+                <Button text="Daftar SKS" onAction="#handlePelajaranTambahan" 
+                       style="-fx-background-color: #e67e22; -fx-text-fill: white; -fx-background-radius: 8; -fx-padding: 10 20;" />
+            </VBox>
+        </HBox>
+    </VBox>
+
+</StackPane>
