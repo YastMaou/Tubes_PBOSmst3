@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<HBox xmlns="http://javafx.com/javafx/11.0.1" 
+      xmlns:fx="http://javafx.com/fxml/1" 
+      fx:controller="com.projektestsiak.controllers.admin.AdminDashboardController"
+      spacing="0" style="-fx-background-color: #f5f6fa;">
+
+    <!-- LEFT PANEL - 75% WIDTH (MENU ADMIN) -->
+    <VBox prefWidth="900" spacing="20" style="-fx-padding: 25; -fx-background-color: #f5f6fa;">
+        
+        <!-- Header Section -->
+        <HBox spacing="20" alignment="CENTER_LEFT">
+            <VBox spacing="5" HBox.hgrow="ALWAYS">
+                <Label fx:id="welcomeLabel" style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;" />
+                <Label text="Panel Administrator Sekolah" style="-fx-font-size: 16px; -fx-text-fill: #7f8c8d;" />
+            </VBox>
+            <Button text="🚪 Logout" onAction="#handleLogout" 
+                   style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-background-radius: 8; -fx-padding: 10 20; -fx-font-weight: bold;" />
+        </HBox>
+
+        <!-- Quick Stats Bar -->
+        <GridPane hgap="15" vgap="10" style="-fx-padding: 15; -fx-background-color: white; -fx-background-radius: 15; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 5);">
+            <VBox spacing="5" alignment="CENTER" GridPane.columnIndex="0">
+                <Label text="👥 Total User" style="-fx-text-fill: #7f8c8d; -fx-font-size: 12px;" />
+                <Label fx:id="quickTotalUsers" text="0" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #3498db;" />
+            </VBox>
+            
+            <VBox spacing="5" alignment="CENTER" GridPane.columnIndex="1">
+                <Label text="📚 Total Pelajaran" style="-fx-text-fill: #7f8c8d; -fx-font-size: 12px;" />
+                <Label fx:id="quickTotalCourses" text="0" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #27ae60;" />
+            </VBox>
+            
+            <VBox spacing="5" alignment="CENTER" GridPane.columnIndex="2">
+                <Label text="📅 Login Hari Ini" style="-fx-text-fill: #7f8c8d; -fx-font-size: 12px;" />
+                <Label fx:id="quickTodayLogin" text="0" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #f39c12;" />
+            </VBox>
+            
+            <VBox spacing="5" alignment="CENTER" GridPane.columnIndex="3">
+                <Label text="📝 Submission Hari Ini" style="-fx-text-fill: #7f8c8d; -fx-font-size: 12px;" />
+                <Label fx:id="quickTodaySubmissions" text="0" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #9b59b6;" />
+            </VBox>
+        </GridPane>
+
+        <!-- Admin Menu Grid (3x3) -->
+        <GridPane hgap="15" vgap="15">
+            <Label text="🚀 Menu Administrator" style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;" 
+                   GridPane.columnSpan="3" GridPane.rowIndex="0" />
+            
+            <!-- Row 1 -->
+            <VBox spacing="12" alignment="CENTER" 
+                  style="-fx-background-color: white; -fx-background-radius: 15; -fx-padding: 25; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 5);"
+                  GridPane.rowIndex="1" GridPane.columnIndex="0">
+                <Label text="👥" style="-fx-font-size: 36px;" />
+                <Label text="Manajemen User" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #2c3e50; -fx-text-alignment: center; -fx-wrap-text: true;" 
+                       wrapText="true" />
+                <Button text="Kelola User" onAction="#handleManageUsers" 
+                       style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-background-radius: 8; -fx-padding: 10 20; -fx-font-size: 14px; -fx-min-width: 120px;" />
+            </VBox>
+            
+            <VBox spacing="12" alignment="CENTER" 
+                  style="-fx-background-color: white; -fx-background-radius: 15; -fx-padding: 25; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 5);"
+                  GridPane.rowIndex="1" GridPane.columnIndex="1">
+                <Label text="📚" style="-fx-font-size: 36px;" />
+                <Label text="Manajemen Mata Pelajaran" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #2c3e50; -fx-text-alignment: center; -fx-wrap-text: true;" 
+                       wrapText="true" />
+                <Button text="Kelola Course" onAction="#handleManageCourses" 
+                       style="-fx-background-color: #9b59b6; -fx-text-fill: white; -fx-background-radius: 8; -fx-padding: 10 20; -fx-font-size: 14px; -fx-min-width: 120px;" />
+            </VBox>
+            
+            <VBox spacing="12" alignment="CENTER" 
+                  style="-fx-background-color: white; -fx-background-radius: 15; -fx-padding: 25; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 5);"
+                  GridPane.rowIndex="1" GridPane.columnIndex="2">
+                <Label text="📅" style="-fx-font-size: 36px;" />
+                <Label text="Manajemen Jadwal" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #2c3e50; -fx-text-alignment: center; -fx-wrap-text: true;" 
+                       wrapText="true" />
+                <Button text="Kelola Jadwal" onAction="#handleManageJadwal" 
+                       style="-fx-background-color: #27ae60; -fx-text-fill: white; -fx-background-radius: 8; -fx-padding: 10 20; -fx-font-size: 14px; -fx-min-width: 120px;" />
+            </VBox>
+            
+            <!-- Row 2 -->
+            <VBox spacing="12" alignment="CENTER" 
+                  style="-fx-background-color: white; -fx-background-radius: 15; -fx-padding: 25; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 5);"
+                  GridPane.rowIndex="2" GridPane.columnIndex="0">
+                <Label text="✅" style="-fx-font-size: 36px;" />
+                <Label text="Validasi Pendaftaran" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #2c3e50; -fx-text-alignment: center; -fx-wrap-text: true;" 
+                       wrapText="true" />
+                <Button text="Validasi" onAction="#handleValidasiPendaftaran" 
+                       style="-fx-background-color: #f39c12; -fx-text-fill: white; -fx-background-radius: 8; -fx-padding: 10 20; -fx-font-size: 14px; -fx-min-width: 120px;" />
+            </VBox>
+            
+            <VBox spacing="12" alignment="CENTER" 
+                  style="-fx-background-color: white; -fx-background-radius: 15; -fx-padding: 25; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 5);"
+                  GridPane.rowIndex="2" GridPane.columnIndex="1">
+                <Label text="📝" style="-fx-font-size: 36px;" />
+                <Label text="Penilaian Tugas" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #2c3e50; -fx-text-alignment: center; -fx-wrap-text: true;" 
+                       wrapText="true" />
+                <Button text="Beri Nilai" onAction="#handlePenilaianTugas" 
+                       style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-background-radius: 8; -fx-padding: 10 20; -fx-font-size: 14px; -fx-min-width: 120px;" />
+            </VBox>
+            
+            <VBox spacing="12" alignment="CENTER" 
+                  style="-fx-background-color: white; -fx-background-radius: 15; -fx-padding: 25; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 5);"
+                  GridPane.rowIndex="2" GridPane.columnIndex="2">
+                <Label text="📊" style="-fx-font-size: 36px;" />
+                <Label text="Laporan Akademik" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #2c3e50; -fx-text-alignment: center; -fx-wrap-text: true;" 
+                       wrapText="true" />
+                <Button text="Generate Laporan" onAction="#handleReports" 
+                       style="-fx-background-color: #1abc9c; -fx-text-fill: white; -fx-background-radius: 8; -fx-padding: 10 20; -fx-font-size: 14px; -fx-min-width: 120px;" />
+            </VBox>
+            
+            <!-- Row 3 -->
+            <VBox spacing="12" alignment="CENTER" 
+                  style="-fx-background-color: white; -fx-background-radius: 15; -fx-padding: 25; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 5);"
+                  GridPane.rowIndex="3" GridPane.columnIndex="0">
+                <Label text="⚙️" style="-fx-font-size: 36px;" />
+                <Label text="Pengaturan Sistem" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #2c3e50; -fx-text-alignment: center; -fx-wrap-text: true;" 
+                       wrapText="true" />
+                <Button text="Settings" onAction="#handleSettings" 
+                       style="-fx-background-color: #34495e; -fx-text-fill: white; -fx-background-radius: 8; -fx-padding: 10 20; -fx-font-size: 14px; -fx-min-width: 120px;" />
+            </VBox>
+            
+            <VBox spacing="12" alignment="CENTER" 
+                  style="-fx-background-color: white; -fx-background-radius: 15; -fx-padding: 25; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 5);"
+                  GridPane.rowIndex="3" GridPane.columnIndex="1">
+                <Label text="🔄" style="-fx-font-size: 36px;" />
+                <Label text="Refresh Statistik" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #2c3e50; -fx-text-alignment: center; -fx-wrap-text: true;" 
+                       wrapText="true" />
+                <Button text="Refresh" onAction="#handleRefreshStats" 
+                       style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-background-radius: 8; -fx-padding: 10 20; -fx-font-size: 14px; -fx-min-width: 120px;" />
+            </VBox>
+            
+            <VBox spacing="12" alignment="CENTER" 
+                  style="-fx-background-color: white; -fx-background-radius: 15; -fx-padding: 25; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 5);"
+                  GridPane.rowIndex="3" GridPane.columnIndex="2">
+                <Label text="ℹ️" style="-fx-font-size: 36px;" />
+                <Label text="Bantuan dan Panduan" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #2c3e50; -fx-text-alignment: center; -fx-wrap-text: true;" 
+                       wrapText="true" />
+                <Button text="Bantuan" 
+                       style="-fx-background-color: #7f8c8d; -fx-text-fill: white; -fx-background-radius: 8; -fx-padding: 10 20; -fx-font-size: 14px; -fx-min-width: 120px;" />
+            </VBox>
+        </GridPane>
+    </VBox>
+
+    <!-- RIGHT PANEL - 25% WIDTH (STATISTIK) -->
+    <VBox prefWidth="300" spacing="0" style="-fx-background-color: white; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 5, -2, 0, 0);">
+        
+        <!-- Panel Header -->
+        <VBox spacing="10" style="-fx-background-color: #2c3e50; -fx-padding: 25;">
+            <Label text="📊 Dashboard Statistik" style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: white;" />
+            <Label fx:id="currentTimeLabel" style="-fx-font-size: 12px; -fx-text-fill: #bdc3c7;" />
+            <Label fx:id="lastLoginLabel" style="-fx-font-size: 12px; -fx-text-fill: #bdc3c7;" />
+        </VBox>
+        
+        <!-- Statistik Content -->
+        <ScrollPane fitToWidth="true" style="-fx-background: transparent; -fx-border-color: transparent;">
+            <VBox spacing="20" style="-fx-padding: 25;">
+                
+                <!-- Statistik Card 1: User Statistics -->
+                <VBox spacing="10" style="-fx-background-color: #f8f9fa; -fx-background-radius: 10; -fx-padding: 20;">
+                    <HBox spacing="10" alignment="CENTER_LEFT">
+                        <Label text="👥" style="-fx-font-size: 20px;" />
+                        <Label text="Statistik User" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;" />
+                    </HBox>
+                    
+                    <Label fx:id="statsUsersLabel" text="0 Siswa" 
+                           style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #3498db;" />
+                    
+                    <VBox spacing="5">
+                        <HBox spacing="10">
+                            <Label fx:id="statsActiveLabel" text="0 Aktif" 
+                                   style="-fx-font-size: 14px; -fx-text-fill: #27ae60;" />
+                            <Label fx:id="statsInactiveLabel" text="0 Tidak Aktif" 
+                                   style="-fx-font-size: 14px; -fx-text-fill: #e74c3c;" />
+                        </HBox>
+                        <ProgressBar fx:id="progressUsers" progress="0" 
+                                    style="-fx-accent: #3498db; -fx-background-radius: 5; -fx-padding: 2px;" />
+                        <Label text="Progress Jumlah User" style="-fx-font-size: 11px; -fx-text-fill: #95a5a6;" />
+                    </VBox>
+                </VBox>
+                
+                <!-- Statistik Card 2: Course Statistics -->
+                <VBox spacing="10" style="-fx-background-color: #f8f9fa; -fx-background-radius: 10; -fx-padding: 20;">
+                    <HBox spacing="10" alignment="CENTER_LEFT">
+                        <Label text="📚" style="-fx-font-size: 20px;" />
+                        <Label text="Mata Pelajaran" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;" />
+                    </HBox>
+                    
+                    <Label fx:id="statsCoursesLabel" text="0 Mata Pelajaran" 
+                           style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #27ae60;" />
+                    
+                    <VBox spacing="5">
+                        <ProgressBar fx:id="progressCourses" progress="0" 
+                                    style="-fx-accent: #27ae60; -fx-background-radius: 5; -fx-padding: 2px;" />
+                        <Label text="Progress Jumlah Mata Pelajaran" style="-fx-font-size: 11px; -fx-text-fill: #95a5a6;" />
+                    </VBox>
+                </VBox>
+                
+                <!-- Statistik Card 3: Pending Validations -->
+                <VBox spacing="10" style="-fx-background-color: #f8f9fa; -fx-background-radius: 10; -fx-padding: 20;">
+                    <HBox spacing="10" alignment="CENTER_LEFT">
+                        <Label text="⏳" style="-fx-font-size: 20px;" />
+                        <Label text="Pending Validasi" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;" />
+                    </HBox>
+                    
+                    <Label fx:id="statsPendingLabel" text="0 Pending" 
+                           style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #f39c12;" />
+                    
+                    <VBox spacing="5">
+                        <ProgressBar fx:id="progressPending" progress="0" 
+                                    style="-fx-accent: #f39c12; -fx-background-radius: 5; -fx-padding: 2px;" />
+                        <Label text="Progress Validasi Pendaftaran" style="-fx-font-size: 11px; -fx-text-fill: #95a5a6;" />
+                    </VBox>
+                </VBox>
+                
+                <!-- Statistik Card 4: Ungraded Tasks -->
+                <VBox spacing="10" style="-fx-background-color: #f8f9fa; -fx-background-radius: 10; -fx-padding: 20;">
+                    <HBox spacing="10" alignment="CENTER_LEFT">
+                        <Label text="📝" style="-fx-font-size: 20px;" />
+                        <Label text="Tugas Belum Dinilai" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;" />
+                    </HBox>
+                    
+                    <Label fx:id="statsUngradedLabel" text="0 Belum Dinilai" 
+                           style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #e74c3c;" />
+                    
+                    <VBox spacing="5">
+                        <ProgressBar fx:id="progressUngraded" progress="0" 
+                                    style="-fx-accent: #e74c3c; -fx-background-radius: 5; -fx-padding: 2px;" />
+                        <Label text="Progress Penilaian Tugas" style="-fx-font-size: 11px; -fx-text-fill: #95a5a6;" />
+                    </VBox>
+                </VBox>
+                
+                <!-- Quick Actions -->
+                <VBox spacing="10" style="-fx-background-color: #2c3e50; -fx-background-radius: 10; -fx-padding: 20;">
+                    <Label text="⚡ Quick Actions" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: white;" />
+                    
+                    <VBox spacing="8">
+                        <Button text="📊 Lihat Laporan Lengkap" 
+                               style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-background-radius: 8; -fx-padding: 8 12; -fx-font-size: 12px;" />
+                        <Button text="📧 Kirim Notifikasi" 
+                               style="-fx-background-color: #27ae60; -fx-text-fill: white; -fx-background-radius: 8; -fx-padding: 8 12; -fx-font-size: 12px;" />
+                        <Button text="🔄 Update Semua Data" 
+                               style="-fx-background-color: #f39c12; -fx-text-fill: white; -fx-background-radius: 8; -fx-padding: 8 12; -fx-font-size: 12px;" />
+                    </VBox>
+                </VBox>
+                
+                <!-- Footer Note -->
+                <VBox spacing="5" style="-fx-padding: 10;">
+                    <Label text="💡 Tips:" style="-fx-font-size: 12px; -fx-font-weight: bold; -fx-text-fill: #7f8c8d;" />
+                    <Label text="• Refresh statistik setiap saat" style="-fx-font-size: 11px; -fx-text-fill: #95a5a6;" />
+                    <Label text="• Monitor pending tasks secara rutin" style="-fx-font-size: 11px; -fx-text-fill: #95a5a6;" />
+                    <Label text="• Cek laporan harian" style="-fx-font-size: 11px; -fx-text-fill: #95a5a6;" />
+                </VBox>
+            </VBox>
+        </ScrollPane>
+    </VBox>
+
+</HBox>
