@@ -1,4 +1,8 @@
 package com.projektestsiak.controllers.akademik;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 
 import com.projektestsiak.models.Tugas;
 import com.projektestsiak.models.TugasModel;
@@ -11,7 +15,6 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.FileChooser;
-import javafx.stage.Stage;
 
 import java.io.File;
 import java.net.URL;
@@ -73,12 +76,12 @@ public class PengumpulanTugasController implements Initializable {
     private void handleBrowseFile() {
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Pilih File Tugas");
-        
+
         // Set extension filters
         FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter(
             "All Files (*.*)", "*.*");
         fileChooser.getExtensionFilters().add(extFilter);
-        
+
         File file = fileChooser.showOpenDialog(filePathField.getScene().getWindow());
         if (file != null) {
             filePathField.setText(file.getAbsolutePath());
@@ -88,7 +91,7 @@ public class PengumpulanTugasController implements Initializable {
     @FXML
     private void handleSubmit() {
         String filePath = filePathField.getText();
-        
+
         if (filePath.isEmpty()) {
             showAlert("Error", "Pilih file tugas terlebih dahulu!");
             return;
@@ -96,11 +99,11 @@ public class PengumpulanTugasController implements Initializable {
 
         try {
             boolean success = pengumpulanModel.kumpulkanTugas(
-                tugasId, 
-                SessionManager.getCurrentUserId(), 
+                tugasId,
+                SessionManager.getCurrentUserId(),
                 filePath
             );
-            
+
             if (success) {
                 showAlert("Success", "Tugas berhasil dikumpulkan!");
                 handleBack();
@@ -113,15 +116,21 @@ public class PengumpulanTugasController implements Initializable {
         }
     }
 
-    @FXML
-    private void handleBack() {
+    @FXML 
+    private void handleBack() {  
         try {
+            FXMLLoader loader = new FXMLLoader(
+                    getClass().getResource("/fxml/akademik/tugas.fxml")
+            );
+            Parent root = loader.load();
+
             Stage stage = (Stage) filePathField.getScene().getWindow();
-            stage.close();
+            stage.setScene(new Scene(root, 1000, 700));
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
+// Error pengumpulan tugas (StageClosed). Solved : Reno
 
     private void showAlert(String title, String message) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
