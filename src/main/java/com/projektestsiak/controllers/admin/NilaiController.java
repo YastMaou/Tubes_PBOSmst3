@@ -59,6 +59,7 @@ public class NilaiController {
     public void initialize() {
         try {
             nilaiModel = new NilaiModel();
+            
             setupTables();
             loadData();
             setupSelectionListeners();

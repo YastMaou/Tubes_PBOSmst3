@@ -96,21 +96,26 @@ public class DatabaseConnection {
             }
 
             // Check and create student user
-            checkStmt.setString(1, "student");
-            rs = checkStmt.executeQuery();
-            rs.next();
-            if (rs.getInt(1) == 0) {
-                try (PreparedStatement insertStmt = connection.prepareStatement(insertUserSql)) {
-                    insertStmt.setString(1, "John Student");
-                    insertStmt.setString(2, "student");
-                    insertStmt.setString(3, "student@siak.ac.id");
-                    insertStmt.setString(4, "082222222222");
-                    insertStmt.setString(5, BCrypt.hashpw("student123", BCrypt.gensalt()));
-                    insertStmt.setString(6, "student");
-                    insertStmt.executeUpdate();
-                    System.out.println("Student user created.");
-                }
+                        String upsertStudent = """
+            INSERT INTO users (nama, username, email, telepon, password, role)
+            VALUES (?, ?, ?, ?, ?, ?)
+            ON DUPLICATE KEY UPDATE
+                nama = VALUES(nama),
+                email = VALUES(email),
+                telepon = VALUES(telepon),
+                role = VALUES(role)
+            """;
+
+            try (PreparedStatement stmt = connection.prepareStatement(upsertStudent)) {
+                stmt.setString(1, "Bahlil Lahadalia");
+                stmt.setString(2, "student");
+                stmt.setString(3, "student@siak.ac.id");
+                stmt.setString(4, "082222222222");
+                stmt.setString(5, BCrypt.hashpw("student123", BCrypt.gensalt()));
+                stmt.setString(6, "student");
+                stmt.executeUpdate();
             }
+
         }
     }
 
