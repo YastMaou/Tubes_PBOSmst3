@@ -18,7 +18,7 @@
     <!-- VBOX PUTIH UNTUK FORM LOGIN -->
     <VBox alignment="CENTER" spacing="20" 
           style="-fx-background-color: white; -fx-background-radius: 15; -fx-padding: 35; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 20, 0, 0, 8);"
-          prefWidth="380" prefHeight="450">
+          prefWidth="400" prefHeight="480">
         
         <!-- JUDUL SISTEM -->
         <VBox spacing="8" alignment="CENTER">
@@ -32,17 +32,18 @@
         </VBox>
         
         <!-- FORM LOGIN -->
-        <VBox spacing="15" alignment="CENTER_LEFT" prefWidth="300">
+        <VBox spacing="15" alignment="CENTER_LEFT" prefWidth="320">
             <Label text="Masuk ke Akun Anda" 
                    style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #2c3e50; -fx-alignment: center;" 
-                   prefWidth="300"/>
+                   prefWidth="320"/>
             
             <!-- USERNAME FIELD -->
             <VBox spacing="5">
                 <Label text="Username" style="-fx-font-size: 12px; -fx-text-fill: #2c3e50; -fx-font-weight: bold;"/>
                 <TextField fx:id="usernameField" promptText="Masukkan username" 
                           style="-fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: #bdc3c7; -fx-padding: 10; -fx-font-size: 14px;" 
-                          prefWidth="300"/>
+                          prefWidth="320"
+                          onKeyPressed="#handleKeyPress"/>
             </VBox>
             
             <!-- PASSWORD FIELD -->
@@ -50,21 +51,22 @@
                 <Label text="Password" style="-fx-font-size: 12px; -fx-text-fill: #2c3e50; -fx-font-weight: bold;"/>
                 <PasswordField fx:id="passwordField" promptText="Masukkan password" 
                               style="-fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: #bdc3c7; -fx-padding: 10; -fx-font-size: 14px;" 
-                              prefWidth="300"/>
+                              prefWidth="320"
+                              onKeyPressed="#handleKeyPress"/>
             </VBox>
             
             <!-- LOGIN BUTTON -->
-            <Button text="MASUK" onAction="#handleLogin" 
+            <Button fx:id="loginButton" text="MASUK" onAction="#handleLogin" 
                    style="-fx-background-color: #58d4b5ff; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 8; -fx-padding: 12; -fx-font-size: 14px; -fx-cursor: hand;" 
-                   prefWidth="300"/>
+                   prefWidth="320"/>
         </VBox>
         
         <!-- INFORMASI AKUN DEMO -->
-        <VBox spacing="10" alignment="CENTER" prefWidth="300">
+        <VBox spacing="12" alignment="CENTER" prefWidth="320">
             <Label text="Akun Demo untuk Testing" 
                    style="-fx-text-fill: #95a5a6; -fx-font-size: 12px; -fx-font-weight: bold;"/>
             
-            <HBox spacing="20" alignment="CENTER">
+            <HBox spacing="15" alignment="CENTER">
                 <!-- AKUN ADMIN -->
                 <VBox spacing="3" alignment="CENTER">
                     <Label text="Administrator" style="-fx-text-fill: #58d4b5ff; -fx-font-size: 11px; -fx-font-weight: bold;"/>
@@ -72,13 +74,24 @@
                     <Label text="admin123" style="-fx-text-fill: #7f8c8d; -fx-font-size: 10px;"/>
                 </VBox>
                 
-                <!-- AKUN SISWA -->
+                <!-- AKUN SISWA 1 -->
                 <VBox spacing="3" alignment="CENTER">
-                    <Label text="Siswa" style="-fx-text-fill: #3498db; -fx-font-size: 11px; -fx-font-weight: bold;"/>
+                    <Label text="Siswa 1" style="-fx-text-fill: #3498db; -fx-font-size: 11px; -fx-font-weight: bold;"/>
                     <Label text="student" style="-fx-text-fill: #7f8c8d; -fx-font-size: 10px; -fx-font-weight: bold;"/>
                     <Label text="student123" style="-fx-text-fill: #7f8c8d; -fx-font-size: 10px;"/>
                 </VBox>
+                
+                <!-- AKUN SISWA 2 -->
+                <VBox spacing="3" alignment="CENTER">
+                    <Label text="Siswa 2" style="-fx-text-fill: #e74c3c; -fx-font-size: 11px; -fx-font-weight: bold;"/>
+                    <Label text="budiarie" style="-fx-text-fill: #7f8c8d; -fx-font-size: 10px; -fx-font-weight: bold;"/>
+                    <Label text="budipass" style="-fx-text-fill: #7f8c8d; -fx-font-size: 10px;"/>
+                </VBox>
             </HBox>
+            
+            <!-- PETUNJUK ENTER -->
+            <Label text="Tekan ENTER untuk masuk" 
+                   style="-fx-text-fill: #95a5a6; -fx-font-size: 11px; -fx-font-style: italic;"/>
         </VBox>
     </VBox>
 

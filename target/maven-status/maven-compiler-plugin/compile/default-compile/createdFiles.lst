@@ -2,7 +2,9 @@ com\projektestsiak\controllers\admin\JadwalAdminController$1.class
 com\projektestsiak\controllers\akademik\JadwalController.class
 com\projektestsiak\models\PelajaranTambahanModel.class
 com\projektestsiak\models\NilaiModel.class
+com\projektestsiak\utils\FxUtils.class
 com\projektestsiak\controllers\admin\AdminDashboardController.class
+com\projektestsiak\utils\DataSeeder.class
 com\projektestsiak\controllers\akademik\DashboardController.class
 com\projektestsiak\controllers\admin\NilaiController.class
 com\projektestsiak\models\JadwalAdminModel$JadwalDetail.class
@@ -21,7 +23,9 @@ com\projektestsiak\models\NilaiModel$PengumpulanDetail.class
 com\projektestsiak\models\ValidasiModel$PendaftaranDetail.class
 com\projektestsiak\models\Jadwal.class
 com\projektestsiak\models\MataKuliah.class
+com\projektestsiak\utils\FxUtils$1.class
 com\projektestsiak\models\SessionManager.class
+com\projektestsiak\models\PelajaranTambahanModel$PelajaranTambahanDetail.class
 com\projektestsiak\models\JadwalAdminModel.class
 com\projektestsiak\controllers\admin\JadwalAdminController.class
 com\projektestsiak\models\TugasModel.class

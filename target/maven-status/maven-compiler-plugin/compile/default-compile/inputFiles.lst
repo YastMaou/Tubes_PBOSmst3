@@ -8,6 +8,7 @@ E:\testjavaa\projektestsiak\src\main\java\com\projektestsiak\models\SessionManag
 E:\testjavaa\projektestsiak\src\main\java\com\projektestsiak\models\PengumpulanTugasModel.java
 E:\testjavaa\projektestsiak\src\main\java\com\projektestsiak\App.java
 E:\testjavaa\projektestsiak\src\main\java\com\projektestsiak\models\MataKuliah.java
+E:\testjavaa\projektestsiak\src\main\java\com\projektestsiak\utils\FxUtils.java
 E:\testjavaa\projektestsiak\src\main\java\com\projektestsiak\models\Tugas.java
 E:\testjavaa\projektestsiak\src\main\java\com\projektestsiak\controllers\auth\LoginController.java
 E:\testjavaa\projektestsiak\src\main\java\com\projektestsiak\models\TugasModel.java
@@ -18,6 +19,7 @@ E:\testjavaa\projektestsiak\src\main\java\com\projektestsiak\controllers\admin\N
 E:\testjavaa\projektestsiak\src\main\java\com\projektestsiak\controllers\akademik\PengumpulanTugasController.java
 E:\testjavaa\projektestsiak\src\main\java\com\projektestsiak\models\Jadwal.java
 E:\testjavaa\projektestsiak\src\main\java\com\projektestsiak\models\JadwalModel.java
+E:\testjavaa\projektestsiak\src\main\java\com\projektestsiak\utils\DataSeeder.java
 E:\testjavaa\projektestsiak\src\main\java\com\projektestsiak\controllers\akademik\TugasController.java
 E:\testjavaa\projektestsiak\src\main\java\com\projektestsiak\models\PelajaranTambahanModel.java
 E:\testjavaa\projektestsiak\src\main\java\com\projektestsiak\models\JadwalAdminModel.java
