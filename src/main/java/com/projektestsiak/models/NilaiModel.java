@@ -9,16 +9,16 @@ public class NilaiModel {
 
     public NilaiModel() throws SQLException {
         this.dbConnection = new DatabaseConnection();
+        // Auto seed pengumpulan tugas saat model dibuat
+        seedPengumpulanJikaKosong();
     }
 
-    
-    //AUTO SEED PENGUMPULAN TUGAS (DUMMY)
-    
+    // AUTO SEED PENGUMPULAN TUGAS (DUMMY)
     public void seedPengumpulanJikaKosong() {
         String checkSql = "SELECT COUNT(*) FROM pengumpulan_tugas";
         String insertSql = """
-            INSERT INTO pengumpulan_tugas (tugas_id, user_id, file_path)
-            VALUES (?, ?, ?)
+            INSERT INTO pengumpulan_tugas (tugas_id, user_id, file_path, submitted_at)
+            VALUES (?, ?, ?, DATE_SUB(NOW(), INTERVAL ? DAY))
         """;
 
         try (Connection conn = dbConnection.getConnection();
@@ -29,16 +29,64 @@ public class NilaiModel {
             if (rs.getInt(1) > 0) return; // sudah ada data → stop
 
             try (PreparedStatement insertStmt = conn.prepareStatement(insertSql)) {
-                // Dummy student (id = 2), tugas id 1 & 2
-                insertStmt.setInt(1, 1);
-                insertStmt.setInt(2, 2);
-                insertStmt.setString(3, "uploads/tugas_aljabar.pdf");
-                insertStmt.executeUpdate();
+                // Seed data untuk 5 tugas berbeda dan 5 siswa berbeda
+                int[][] data = {
+                    {1, 2, 0},  // tugas 1, siswa 2, 0 hari lalu
+                    {2, 3, 1},  // tugas 2, siswa 3, 1 hari lalu
+                    {3, 4, 2},  // tugas 3, siswa 4, 2 hari lalu
+                    {4, 5, 3},  // tugas 4, siswa 5, 3 hari lalu
+                    {5, 6, 4},  // tugas 5, siswa 6, 4 hari lalu
+                    {1, 7, 5},  // tugas 1, siswa 7, 5 hari lalu
+                    {2, 8, 6},  // tugas 2, siswa 8, 6 hari lalu
+                    {3, 9, 7},  // tugas 3, siswa 9, 7 hari lalu
+                    {4, 10, 8}, // tugas 4, siswa 10, 8 hari lalu
+                    {5, 11, 9}  // tugas 5, siswa 11, 9 hari lalu
+                };
 
-                insertStmt.setInt(1, 2);
-                insertStmt.setInt(2, 2);
-                insertStmt.setString(3, "uploads/kalkulator.zip");
-                insertStmt.executeUpdate();
+                String[] fileNames = {
+                    "tugas_aljabar.pdf", "kalkulator.zip", "erd_design.pdf",
+                    "website_portfolio.zip", "ai_paper.docx", "network_design.pdf",
+                    "os_guide.pdf", "algoritma_tugas.zip", "statistika_report.pdf",
+                    "mobile_app.apk"
+                };
+
+                for (int i = 0; i < data.length; i++) {
+                    insertStmt.setInt(1, data[i][0]); // tugas_id
+                    insertStmt.setInt(2, data[i][1]); // user_id
+                    insertStmt.setString(3, "/uploads/" + fileNames[i]); // file_path
+                    insertStmt.setInt(4, data[i][2]); // days ago
+                    insertStmt.addBatch();
+                }
+                insertStmt.executeBatch();
+
+                // Beri nilai pada beberapa pengumpulan
+                String updateNilaiSql = """
+                    UPDATE pengumpulan_tugas 
+                    SET nilai = ?, komentar = ?
+                    WHERE tugas_id = ? AND user_id = ?
+                """;
+                
+                try (PreparedStatement updateStmt = conn.prepareStatement(updateNilaiSql)) {
+                    // Nilai untuk 5 pengumpulan pertama
+                    double[] nilai = {85.5, 92.0, 78.0, 88.5, 95.0};
+                    String[] komentar = {
+                        "Bagus, tapi kurang detail",
+                        "Implementasi sangat baik",
+                        "Cukup baik, perlu improvement",
+                        "Desain sangat baik",
+                        "Excellent work!"
+                    };
+                    
+                    for (int i = 0; i < 5; i++) {
+                        updateStmt.setDouble(1, nilai[i]);
+                        updateStmt.setString(2, komentar[i]);
+                        updateStmt.setInt(3, data[i][0]);
+                        updateStmt.setInt(4, data[i][1]);
+                        updateStmt.addBatch();
+                    }
+                    updateStmt.executeBatch();
+                }
+
             }
 
             System.out.println("✔ Dummy pengumpulan tugas berhasil dibuat");
@@ -48,9 +96,7 @@ public class NilaiModel {
         }
     }
 
-    
     // GET PENGUMPULAN BELUM DINILAI
-    
     public List<PengumpulanDetail> getPengumpulanBelumDinilai() {
         List<PengumpulanDetail> list = new ArrayList<>();
         String query = """
@@ -70,7 +116,7 @@ public class NilaiModel {
 
             while (rs.next()) {
                 Double nilai = rs.getDouble("nilai");
-                if (rs.wasNull()) nilai = null; // FIX NULL/BUG(Reno)
+                if (rs.wasNull()) nilai = null;
 
                 PengumpulanDetail pd = new PengumpulanDetail(
                     rs.getInt("id"),
@@ -88,15 +134,15 @@ public class NilaiModel {
                 );
                 list.add(pd);
             }
+
         } catch (SQLException e) {
             e.printStackTrace();
         }
+
         return list;
     }
 
-    
     // GET PENGUMPULAN SUDAH DINILAI
-    
     public List<PengumpulanDetail> getPengumpulanSudahDinilai() {
         List<PengumpulanDetail> list = new ArrayList<>();
         String query = """
@@ -116,7 +162,7 @@ public class NilaiModel {
 
             while (rs.next()) {
                 Double nilai = rs.getDouble("nilai");
-                if (rs.wasNull()) nilai = null; //FIX NULL/BUG(RENO)
+                if (rs.wasNull()) nilai = null;
 
                 PengumpulanDetail pd = new PengumpulanDetail(
                     rs.getInt("id"),
@@ -134,25 +180,22 @@ public class NilaiModel {
                 );
                 list.add(pd);
             }
+
         } catch (SQLException e) {
             e.printStackTrace();
         }
+
         return list;
     }
 
-    
     // CRUD NILAI
-    
     public boolean beriNilai(int pengumpulanId, double nilai, String komentar) {
         String query = "UPDATE pengumpulan_tugas SET nilai = ?, komentar = ? WHERE id = ?";
-
         try (Connection conn = dbConnection.getConnection();
              PreparedStatement stmt = conn.prepareStatement(query)) {
-
             stmt.setDouble(1, nilai);
             stmt.setString(2, komentar);
             stmt.setInt(3, pengumpulanId);
-
             return stmt.executeUpdate() > 0;
         } catch (SQLException e) {
             e.printStackTrace();
@@ -166,10 +209,8 @@ public class NilaiModel {
 
     public boolean hapusNilai(int pengumpulanId) {
         String query = "UPDATE pengumpulan_tugas SET nilai = NULL, komentar = NULL WHERE id = ?";
-
         try (Connection conn = dbConnection.getConnection();
              PreparedStatement stmt = conn.prepareStatement(query)) {
-
             stmt.setInt(1, pengumpulanId);
             return stmt.executeUpdate() > 0;
         } catch (SQLException e) {
@@ -178,9 +219,7 @@ public class NilaiModel {
         return false;
     }
 
-    
     // INNER CLASS
-    
     public static class PengumpulanDetail {
         private int id;
         private int tugasId;
@@ -196,9 +235,9 @@ public class NilaiModel {
         private String komentar;
 
         public PengumpulanDetail(int id, int tugasId, int userId, String namaSiswa,
-                                 String username, String judulTugas, String deskripsiTugas,
-                                 String mataKuliahNama, String filePath,
-                                 java.time.LocalDateTime submittedAt, Double nilai, String komentar) {
+                               String username, String judulTugas, String deskripsiTugas,
+                               String mataKuliahNama, String filePath,
+                               java.time.LocalDateTime submittedAt, Double nilai, String komentar) {
             this.id = id;
             this.tugasId = tugasId;
             this.userId = userId;
@@ -222,7 +261,6 @@ public class NilaiModel {
         public String getFilePath() { return filePath; }
         public Double getNilai() { return nilai; }
         public String getKomentar() { return komentar; }
-
         public String getSubmittedAtFormat() {
             return submittedAt.toString().replace("T", " ");
         }
