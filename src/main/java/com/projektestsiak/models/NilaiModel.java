@@ -265,4 +265,80 @@ public class NilaiModel {
             return submittedAt.toString().replace("T", " ");
         }
     }
+
+
+// public static class LaporanNilai {
+//         private final String namaSiswa;
+//         private final String judulTugas;
+//         private final Double nilai;
+//         private final String komentar;
+
+//         public LaporanNilai(String namaSiswa, String judulTugas, Double nilai, String komentar) {
+//             this.namaSiswa = namaSiswa;
+//             this.judulTugas = judulTugas;
+//             this.nilai = nilai;
+//             this.komentar = komentar;
+//         }
+
+//         public String getNamaSiswa() { return namaSiswa; }
+//         public String getJudulTugas() { return judulTugas; }
+//         public Double getNilai() { return nilai; }
+//         public String getKomentar() { return komentar; }
+
+
+   public List<LaporanNilai> getLaporanNilai() {
+    List<LaporanNilai> list = new ArrayList<>();
+
+    String sql = """
+        SELECT u.nama, t.judul, pt.nilai, pt.komentar
+        FROM pengumpulan_tugas pt
+        JOIN users u ON pt.user_id = u.id
+        JOIN tugas t ON pt.tugas_id = t.id
+        WHERE pt.nilai IS NOT NULL
+        ORDER BY u.nama
+    """;
+
+    try (Connection conn = DatabaseConnection.getConnection();
+         PreparedStatement stmt = conn.prepareStatement(sql);
+         ResultSet rs = stmt.executeQuery()) {
+
+        while (rs.next()) {
+            list.add(new LaporanNilai(
+                rs.getString("nama"),
+                rs.getString("judul"),
+                rs.getDouble("nilai"),
+                rs.getString("komentar")
+            ));
+        }
+
+    } catch (SQLException e) {
+        e.printStackTrace();
+    }
+
+    return list;
 }
+}
+
+
+//     public static class PengumpulanDetail {
+//         private final String namaSiswa, username, judulTugas, deskripsiTugas, mataKuliahNama, filePath;
+//         private final java.time.LocalDateTime submittedAt;
+//         private final Double nilai;
+//         private final String komentar;
+
+//         public PengumpulanDetail(int id, String namaSiswa, String username, String judulTugas,
+//                                  String deskripsiTugas, String mataKuliahNama,
+//                                  String filePath, java.time.LocalDateTime submittedAt,
+//                                  Double nilai, String komentar) {
+//             this.namaSiswa = namaSiswa;
+//             this.username = username;
+//             this.judulTugas = judulTugas;
+//             this.deskripsiTugas = deskripsiTugas;
+//             this.mataKuliahNama = mataKuliahNama;
+//             this.filePath = filePath;
+//             this.submittedAt = submittedAt;
+//             this.nilai = nilai;
+//             this.komentar = komentar;
+//         }
+//     }
+// }
