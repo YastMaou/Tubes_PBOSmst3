@@ -239,9 +239,10 @@ public class AdminDashboardController {
     }
     
     @FXML
-    private void handleReports() {
-        showAlert("Info", "Fitur Laporan akan segera hadir!\n\nLaporan yang akan tersedia:\n1. Laporan Nilai Siswa\n2. Laporan Kehadiran\n3. Laporan Keuangan\n4. Laporan Aktivitas");
-    }
+private void handleReports() {
+    loadScene("/fxml/admin/laporan_menu.fxml");
+}
+
     
     @FXML
     private void handleSettings() {
