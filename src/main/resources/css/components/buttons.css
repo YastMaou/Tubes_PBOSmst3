@@ -1,0 +1,61 @@
+.button {
+    -fx-background-radius: 10;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-padding: 8 18;
+    -fx-cursor: hand;
+}
+
+/* PRIMARY */
+.btn-primary {
+    -fx-background-color: #0EA5E9;
+    -fx-text-fill: white;
+}
+.btn-primary:hover {
+    -fx-background-color: #0284C7;
+}
+
+/* SUCCESS */
+.btn-success {
+    -fx-background-color: #22C55E;
+    -fx-text-fill: white;
+}
+.btn-success:hover {
+    -fx-background-color: #16A34A;
+}
+
+/* WARNING */
+.btn-warning {
+    -fx-background-color: #F59E0B;
+    -fx-text-fill: white;
+}
+.btn-warning:hover {
+    -fx-background-color: #D97706;
+}
+
+/* DANGER */
+.btn-danger {
+    -fx-background-color: #EF4444;
+    -fx-text-fill: white;
+}
+.btn-danger:hover {
+    -fx-background-color: #DC2626;
+}
+
+/* INFO */
+.btn-info {
+    -fx-background-color: #38BDF8;
+    -fx-text-fill: white;
+}
+.btn-info:hover {
+    -fx-background-color: #0EA5E9;
+}
+
+/* SECONDARY */
+.btn-secondary {
+    -fx-background-color: #64748B;
+    -fx-text-fill: white;
+}
+.btn-secondary:hover {
+    -fx-background-color: #475569;
+}

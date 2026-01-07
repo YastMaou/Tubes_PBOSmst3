@@ -1,0 +1,297 @@
+/* ================================
+   ADMIN DASHBOARD ONLY
+   ISOLATED FROM LOGIN & STUDENT
+================================ */
+
+/* ROOT */
+.admin-root {
+    -fx-background-color: #F1F5F9;
+    -fx-font-family: "Segoe UI", "Inter", sans-serif;
+}
+
+/* MAIN CONTAINER */
+.admin-container {
+    -fx-padding: 28;
+}
+
+/* ================= HEADER ================= */
+
+.admin-header {
+    -fx-background-color: white;
+    -fx-padding: 22 28;
+    -fx-background-radius: 22;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.05), 14, 0, 0, 6);
+}
+
+.admin-title {
+    -fx-font-size: 26px;
+    -fx-font-weight: 700;
+}
+
+.admin-subtitle {
+    -fx-text-fill: #64748B;
+    -fx-font-size: 13px;
+}
+
+/* ================================
+   LOGOUT BUTTON
+================================ */
+
+.admin-header .button {
+    -fx-background-color: linear-gradient(to bottom right, #0EA5E9, #0284C7);
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 13px;
+
+    -fx-padding: 8 20;
+    -fx-background-radius: 999;
+    -fx-border-radius: 999;
+    -fx-border-width: 0;
+
+    -fx-effect: dropshadow(gaussian, rgba(14,165,233,0.45), 12, 0, 0, 2);
+}
+
+/* Hover */
+.admin-header .button:hover {
+    -fx-background-color: linear-gradient(to bottom right, #38BDF8, #0EA5E9);
+    -fx-effect: dropshadow(gaussian, rgba(14,165,233,0.65), 16, 0, 0, 3);
+}
+
+/* Pressed */
+.admin-header .button:pressed {
+    -fx-background-color: linear-gradient(to bottom right, #0284C7, #0369A1);
+    -fx-effect: dropshadow(gaussian, rgba(14,165,233,0.3), 6, 0, 0, 1);
+}
+
+/* ================= STATS ================= */
+
+.admin-stats-wrapper {
+    -fx-background-color: white;
+    -fx-padding: 20;
+    -fx-background-radius: 20;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.06), 16, 0, 0, 6);
+}
+
+.admin-stat-card {
+    -fx-alignment: CENTER;
+    -fx-padding: 18;
+    -fx-background-color: #F8FAFC;
+    -fx-background-radius: 16;
+    -fx-min-width: 150;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.03), 10, 0, 0, 3);
+}
+
+.admin-stat-label {
+    -fx-font-size: 12px;
+    -fx-text-fill: #64748B;
+}
+
+.admin-stat-value {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+}
+
+/* ================= MENU ================= */
+
+.admin-section-title {
+    -fx-font-size: 20px;
+    -fx-font-weight: 700;
+}
+
+/* CARD */
+.admin-menu-card {
+    -fx-background-color: white;
+    -fx-padding: 22;
+    -fx-background-radius: 22;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.06), 16, 0, 0, 6);
+    -fx-cursor: hand;
+}
+
+/* HOVER ANIMATION */
+.admin-menu-card:hover {
+    -fx-effect: dropshadow(gaussian, rgba(56,189,248,0.35), 24, 0, 0, 10);
+    -fx-translate-y: -3;
+}
+
+.admin-menu-title {
+    -fx-font-size: 15px;
+    -fx-font-weight: 700;
+    -fx-padding: 0 0 8 0;
+}
+
+/* ================= BUTTON SYSTEM ================= */
+
+.button {
+    -fx-background-radius: 14;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-padding: 8 22;
+    -fx-cursor: hand;
+}
+
+/* PRIMARY */
+.btn-primary {
+    -fx-background-color: linear-gradient(to right, #06B6D4, #0EA5E9);
+}
+.btn-primary:hover {
+    -fx-background-color: linear-gradient(to right, #0EA5E9, #0284C7);
+}
+
+/* SECONDARY */
+.btn-secondary {
+    -fx-background-color: linear-gradient(to right, #E5E7EB, #D1D5DB);
+    -fx-text-fill: #111827;
+}
+.btn-secondary:hover {
+    -fx-background-color: linear-gradient(to right, #D1D5DB, #9CA3AF);
+}
+
+/* SUCCESS */
+.btn-success {
+    -fx-background-color: linear-gradient(to right, #22C55E, #16A34A);
+}
+.btn-success:hover {
+    -fx-background-color: linear-gradient(to right, #16A34A, #15803D);
+}
+
+/* WARNING */
+.btn-warning {
+    -fx-background-color: linear-gradient(to right, #F59E0B, #F97316);
+}
+.btn-warning:hover {
+    -fx-background-color: linear-gradient(to right, #F97316, #EA580C);
+}
+
+/* DANGER */
+.btn-danger {
+    -fx-background-color: linear-gradient(to right, #EF4444, #DC2626);
+}
+.btn-danger:hover {
+    -fx-background-color: linear-gradient(to right, #DC2626, #B91C1C);
+}
+
+/* INFO */
+.btn-info {
+    -fx-background-color: linear-gradient(to right, #0EA5E9, #0284C7);
+}
+.btn-info:hover {
+    -fx-background-color: linear-gradient(to right, #0284C7, #0369A1);
+}
+
+/* GHOST (SIDEBAR) */
+.btn-ghost {
+    -fx-background-color: rgba(255,255,255,0.25);
+    -fx-text-fill: white;
+    -fx-background-radius: 12;
+}
+.btn-ghost:hover {
+    -fx-background-color: rgba(255,255,255,0.4);
+}
+
+/* ================= SIDEBAR ================= */
+
+/* SIDEBAR */
+.admin-sidebar {
+    -fx-background-color: white;
+    -fx-border-color: #E2E8F0;
+    -fx-border-width: 0 0 0 1;
+}
+
+/* HEADER SIDEBAR (BAGIAN HITAM) */
+.admin-sidebar-header {
+    -fx-background-color: linear-gradient(to bottom right, #1E293B, #0F172A);
+    -fx-padding: 20 18;
+    -fx-background-radius: 0 0 18 18;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.25), 14, 0, 0, 4);
+}
+
+
+/* JUDUL */
+.admin-sidebar-title {
+    -fx-text-fill: white;
+    -fx-font-size: 17px;
+    -fx-font-weight: bold;
+}
+
+/* META TEXT (WAKTU & LOGIN) */
+.admin-sidebar-meta {
+    -fx-text-fill: #CBD5E1;
+    -fx-font-size: 11px;
+}
+
+
+/* STAT BOX */
+.admin-stat-box {
+    -fx-background-color: white;
+    -fx-padding: 16;
+    -fx-background-radius: 18;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.05), 14, 0, 0, 5);
+}
+
+.admin-stat-title {
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+}
+
+.admin-stat-value {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+}
+
+/* QUICK ACTIONS */
+.admin-quick-actions {
+    -fx-background-color: linear-gradient(to bottom right, #10B981, #06B6D4);
+    -fx-padding: 20;
+    -fx-background-radius: 20;
+}
+
+.admin-quick-title {
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 15px;
+}
+
+/* TEXT */
+.text-success { -fx-text-fill: #22C55E; }
+.text-danger  { -fx-text-fill: #EF4444; }
+
+/* ================================
+   MODERN SCROLLBAR
+================================ */
+
+/* ScrollPane background */
+.scroll-pane {
+    -fx-background-color: transparent;
+}
+
+.scroll-pane > .viewport {
+    -fx-background-color: transparent;
+}
+
+/* Track */
+.scroll-bar:vertical .track {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+/* Thumb (handle) */
+.scroll-bar:vertical .thumb {
+    -fx-background-color: rgba(15, 23, 42, 0.25); /* soft dark */
+    -fx-background-radius: 10;
+}
+
+.scroll-bar:vertical .thumb:hover {
+    -fx-background-color: rgba(15, 23, 42, 0.45);
+}
+
+/* Remove arrows */
+.scroll-bar:vertical .increment-button,
+.scroll-bar:vertical .decrement-button {
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+}
+
+.scroll-bar:vertical .increment-arrow,
+.scroll-bar:vertical .decrement-arrow {
+    -fx-shape: "";
+}

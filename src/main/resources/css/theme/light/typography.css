@@ -1,0 +1,32 @@
+.root {
+    -fx-font-family: "Inter", "Segoe UI", system-ui, sans-serif;
+}
+
+/* Headings */
+.h1 {
+    -fx-font-size: 26px;
+    -fx-font-weight: 700;
+}
+
+.h2 {
+    -fx-font-size: 20px;
+    -fx-font-weight: 600;
+}
+
+.h3 {
+    -fx-font-size: 16px;
+    -fx-font-weight: 600;
+}
+
+/* Text */
+.text-main {
+    -fx-text-fill: -fx-text-main;
+}
+
+.text-muted {
+    -fx-text-fill: -fx-text-muted;
+}
+
+.text-invert {
+    -fx-text-fill: -fx-text-invert;
+}

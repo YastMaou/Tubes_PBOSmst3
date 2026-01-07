@@ -1,0 +1,10 @@
+.table-view {
+    -fx-background-color: -fx-bg-surface;
+    -fx-background-radius: 14px;
+    -fx-border-radius: 14px;
+    -fx-border-color: -fx-border-subtle;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: -fx-bg-soft;
+}

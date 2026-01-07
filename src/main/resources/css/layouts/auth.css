@@ -1,0 +1,37 @@
+.auth-root {
+    -fx-background-image: url("/images/insta4.jpg");
+    -fx-background-size: cover;
+    -fx-background-position: center center;
+    -fx-background-repeat: no-repeat;
+}
+
+.auth-overlay {
+    -fx-background-color: rgba(0, 0, 0, 0.35);
+}
+
+.auth-card {
+    -fx-background-color: rgba(20, 30, 48, 0.92);
+    -fx-background-radius: 28;
+    -fx-padding: 36;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 40, 0, 0, 12);
+}
+
+/* Typography */
+.auth-title { -fx-font-size: 26px; -fx-font-weight: bold; -fx-text-fill: white; }
+.auth-subtitle { -fx-font-size: 13px; -fx-text-fill: #CBD5E1; }
+.auth-welcome { -fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: white; }
+.auth-description { -fx-font-size: 12px; -fx-text-fill: #94A3B8; }
+
+.form-label { -fx-text-fill: #E2E8F0; -fx-font-size: 12px; -fx-font-weight: bold; }
+
+.input-field {
+    -fx-background-color: rgba(255,255,255,0.08);
+    -fx-border-color: rgba(255,255,255,0.2);
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-text-fill: white;
+    -fx-padding: 12;
+}
+.input-field:focused { -fx-border-color: #10B981; }
+
+.footer-text { -fx-text-fill: #94A3B8; -fx-font-size: 11px; }
