@@ -22,7 +22,11 @@ import java.sql.*;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
+// OOP definisi kelas AdminDashboardController
+
 public class AdminDashboardController {
+
+    // OOP Encapsulation - atribut private
     @FXML private Label welcomeLabel;
     @FXML private Label currentTimeLabel;
     @FXML private Label lastLoginLabel;
@@ -58,6 +62,8 @@ public class AdminDashboardController {
         loadQuickStats();
     }
     
+
+    // OOP Abstraction - method private untuk update waktu
     private void updateCurrentTime() {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("EEEE, dd MMMM yyyy HH:mm:ss");
         currentTimeLabel.setText(LocalDateTime.now().format(formatter));

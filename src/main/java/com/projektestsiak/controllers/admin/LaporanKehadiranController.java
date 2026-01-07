@@ -25,6 +25,7 @@ public void initialize() {
     colStatus.setCellValueFactory(new PropertyValueFactory<>("status"));
 
     // CENTER + BADGE STYLE
+    // OOP Inheritance TableCell
     colStatus.setCellFactory(column -> new TableCell<>() {
         @Override
         protected void updateItem(String item, boolean empty) {
@@ -55,7 +56,7 @@ public void initialize() {
     ));
 }
 
-        // ===== AKHIR BADGE =====
+        //AKHIR BADGE
 
 
     @FXML
@@ -64,7 +65,7 @@ public void initialize() {
         Stage stage = (Stage) table.getScene().getWindow();
         stage.setScene(new Scene(root, 1200, 700));
     }
-
+    // Encapsulation
     public static class KehadiranDummy {
         private String nama, tanggal, status;
 

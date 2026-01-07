@@ -7,6 +7,8 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.scene.control.Button;
 
+
+// OOP Class & Object
 public class LaporanMenuController {
 
     @FXML private Button btnBack;

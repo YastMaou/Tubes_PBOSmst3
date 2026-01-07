@@ -15,6 +15,7 @@ import javafx.stage.Stage;
 
 import java.sql.SQLException;
 
+// OOP Class & Object
 public class LaporanNilaiController {
 
     @FXML private TableView<LaporanNilai> tableLaporan;
@@ -26,6 +27,7 @@ public class LaporanNilaiController {
     @FXML private Button btnBack;
 
     @FXML
+    // Encapsulation
     public void initialize() {
         colNama.setCellValueFactory(new PropertyValueFactory<>("namaSiswa"));
         colTugas.setCellValueFactory(new PropertyValueFactory<>("judulTugas"));

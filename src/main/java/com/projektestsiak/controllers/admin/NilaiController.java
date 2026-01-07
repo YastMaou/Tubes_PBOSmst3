@@ -15,7 +15,7 @@ import java.io.File;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
-
+// OOP Class & Object
 public class NilaiController {
 
     @FXML private TabPane tabPane;
@@ -56,6 +56,7 @@ public class NilaiController {
     private NilaiModel.PengumpulanDetail selectedPengumpulan;
 
     @FXML
+    // Encapsulation
     public void initialize() {
         try {
             nilaiModel = new NilaiModel();
@@ -146,6 +147,7 @@ public class NilaiController {
     }
 
     @FXML
+    // Encapsulation
     private void handleBeriNilai() {
         if (selectedPengumpulan == null) {
             showAlert("Peringatan", "Pilih pengumpulan tugas yang akan dinilai!");
