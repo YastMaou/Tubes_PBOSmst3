@@ -15,7 +15,7 @@ public class LaporanMenuController {
         try {
             Parent root = FXMLLoader.load(getClass().getResource(fxml));
             Stage stage = (Stage) btnBack.getScene().getWindow();
-            stage.setScene(new Scene(root, 1000, 700));
+            stage.setScene(new Scene(root, 1200, 700));
             stage.setTitle("Sistem Akademik Sekolah - " + title);
         } catch (Exception e) {
             e.printStackTrace();

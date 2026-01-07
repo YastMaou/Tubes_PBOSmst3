@@ -1,0 +1,119 @@
+/* =========================
+   ROOT
+========================= */
+.laporan-root {
+    -fx-background-color: #f6f9fc;
+}
+
+/* =========================
+   HEADER
+========================= */
+.laporan-header {
+    -fx-padding: 20 24;
+    -fx-background-color: linear-gradient(to right, #1e3a5f, #223e63);
+}
+
+.laporan-title {
+    -fx-text-fill: white;
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+}
+
+.laporan-subtitle {
+    -fx-text-fill: #c7d2fe;
+    -fx-font-size: 12px;
+}
+
+/* =========================
+   CONTAINER
+========================= */
+.laporan-container {
+    -fx-padding: 24;
+}
+
+/* =========================
+   SECTION TITLE
+========================= */
+.section-title {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1f2937;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+.btn-primary {
+    -fx-background-color: linear-gradient(to right, #2563eb, #1d4ed8);
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 10;
+    -fx-padding: 8 18;
+}
+
+.btn-primary:hover {
+    -fx-background-color: linear-gradient(to right, #1d4ed8, #1e40af);
+}
+
+.btn-outline {
+    -fx-background-color: transparent;
+    -fx-border-color: white;
+    -fx-border-radius: 10;
+    -fx-text-fill: white;
+    -fx-padding: 8 18;
+}
+
+.btn-outline:hover {
+    -fx-background-color: rgba(255,255,255,0.15);
+}
+
+/* =========================
+   LIST VIEW
+========================= */
+.activity-list {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+/* cell dasar */
+.activity-list .list-cell {
+    -fx-background-color: white;
+    -fx-background-radius: 14;
+    -fx-border-radius: 14;
+    -fx-border-color: #e5e7eb;
+    -fx-padding: 12 16;
+    -fx-text-fill: #1f2937;
+    -fx-font-size: 13px;
+}
+
+/* jarak antar item */
+.activity-list .list-cell:filled {
+    -fx-margin: 6 0;
+}
+
+/* hover */
+.activity-list .list-cell:hover {
+    -fx-background-color: #f0f6ff;
+}
+
+/* selected */
+.activity-list .list-cell:selected {
+    -fx-background-color: #e0edff;
+    -fx-border-color: #2563eb;
+}
+
+/* =========================
+   SCROLLBAR MODERN
+========================= */
+.activity-list .scroll-bar:vertical {
+    -fx-background-color: transparent;
+}
+
+.activity-list .scroll-bar:vertical .thumb {
+    -fx-background-color: #cbd5e1;
+    -fx-background-radius: 6;
+}
+
+.activity-list .scroll-bar:vertical .thumb:hover {
+    -fx-background-color: #94a3b8;
+}

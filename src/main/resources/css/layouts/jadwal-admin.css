@@ -68,13 +68,18 @@
 }
 
 /* ==========================================================
-   BUTTONS
-========================================================== */
 
 .btn-primary {
     -fx-background-color: linear-gradient(to right, #0EA5E9, #2563EB);
     -fx-text-fill: white;
     -fx-background-radius: 24;
+   BUTTON SYSTEM (ATOMIC)
+
+/* PRIMARY (TAMBAH, REFRESH) */
+.btn-primary {
+    -fx-background-color: linear-gradient(to right, #0EA5E9, #2563EB);
+    -fx-text-fill: white;
+    -fx-background-radius: 22;
     -fx-padding: 8 18;
     -fx-font-weight: bold;
 }
@@ -83,16 +88,37 @@
     -fx-background-color: linear-gradient(to right, #0284C7, #1D4ED8);
 }
 
+/* OUTLINE (CLEAR, UPDATE, BACK) */
 .btn-outline {
     -fx-background-color: transparent;
     -fx-border-color: #CBD5E1;
-    -fx-border-radius: 24;
-    -fx-background-radius: 24;
+    -fx-border-radius: 22;
+    -fx-background-radius: 22;
     -fx-padding: 8 18;
+    -fx-text-fill: #0F172A;
 }
 
 .btn-outline:hover {
     -fx-background-color: #F1F5F9;
+}
+
+/* DANGER (HAPUS) */
+.btn-danger {
+    -fx-background-color: linear-gradient(to right, #F87171, #EF4444);
+    -fx-text-fill: white;
+    -fx-background-radius: 22;
+    -fx-padding: 8 18;
+    -fx-font-weight: bold;
+}
+
+.btn-danger:hover {
+    -fx-background-color: linear-gradient(to right, #EF4444, #DC2626);
+}
+
+/* DISABLED STATE */
+.button:disabled {
+    -fx-opacity: 0.5;
+    -fx-cursor: default;
 }
 
 /* ==========================================================
@@ -155,45 +181,40 @@
 }
 
 /* ==========================================================
-   ATOMIC COLOR SEMANTIC (PER COLUMN)
-========================================================== */
 
 /* KODE */
+   ATOMIC COLOR SEMANTIC PER COLUMN
+
 .col-kode .table-cell {
     -fx-text-fill: #475569;
     -fx-font-weight: bold;
 }
 
-/* MATA KULIAH (PRIMARY INFO) */
 .col-matkul .table-cell {
     -fx-text-fill: #2563EB;
     -fx-font-weight: bold;
 }
 
-/* DOSEN (ACTOR) */
 .col-dosen .table-cell {
     -fx-text-fill: #7C3AED;
 }
 
-/* HARI (STATUS / AGENDA) */
 .col-hari .table-cell {
     -fx-text-fill: #16A34A;
     -fx-font-weight: bold;
 }
 
-/* JAM (TIME) */
 .col-jam .table-cell {
     -fx-text-fill: #F97316;
     -fx-font-weight: bold;
 }
 
-/* RUANGAN (LOCATION) */
 .col-ruang .table-cell {
     -fx-text-fill: #0D9488;
 }
 
 /* ==========================================================
-   SCROLLBAR (MODERN)
+   SCROLLBAR MODERN
 ========================================================== */
 
 .table-view .scroll-bar:vertical,
@@ -216,4 +237,95 @@
 .table-view .scroll-bar:vertical .thumb:hover,
 .table-view .scroll-bar:horizontal .thumb:hover {
     -fx-background-color: #94A3B8;
+}
+
+/* ==========================================================
+   TABLE MODERN - WARNA TEKS BIRU (ATOMIC DESIGN)
+
+/* Header tabel */
+.table-view .column-header-background {
+    -fx-background-color: #F1F5F9;
+    -fx-background-radius: 10 10 0 0;
+}
+
+.table-view .column-header {
+    -fx-background-color: transparent;
+}
+
+.table-view .column-header .label {
+    -fx-font-weight: bold;
+    -fx-text-fill: #0F172A;
+}
+
+/* Baris */
+.table-view .table-row-cell {
+    -fx-background-color: white;
+    -fx-border-color: transparent transparent #F1F5F9 transparent;
+}
+
+.table-view .table-row-cell:filled:selected {
+    -fx-background-color: #E0F2FE;
+}
+
+/* ==========================================================
+   KOLOM BERWARNA BIRU
+
+/* Kode */
+.col-kode {
+    -fx-text-fill: #2563EB; /* blue-600 */
+    -fx-font-weight: bold;
+}
+
+/* Mata Kuliah */
+.col-matkul {
+    -fx-text-fill: #1D4ED8; /* blue-700 */
+    -fx-font-weight: 600;
+}
+
+/* Dosen */
+.col-dosen {
+    -fx-text-fill: #0369A1; /* sky-700 */
+}
+
+/* Hari (tetap badge / biru dasar) */
+.col-hari {
+    -fx-text-fill: #0284C7;
+    -fx-font-weight: bold;
+}
+
+/* Jam */
+.col-jam {
+    -fx-text-fill: #0EA5E9; /* sky-500 */
+}
+
+/* Ruangan */
+.col-ruangan {
+    -fx-text-fill: #2563EB;
+}
+
+/* ==========================================================
+   BUTTON (KONSISTENSI WARNA)
+
+.btn-primary {
+    -fx-background-color: linear-gradient(to right, #2563EB, #0EA5E9);
+    -fx-text-fill: white;
+    -fx-background-radius: 20;
+    -fx-padding: 8 18;
+    -fx-font-weight: bold;
+}
+
+.btn-danger {
+    -fx-background-color: linear-gradient(to right, #EF4444, #F87171);
+    -fx-text-fill: white;
+    -fx-background-radius: 20;
+    -fx-padding: 8 18;
+    -fx-font-weight: bold;
+}
+
+.btn-outline {
+    -fx-background-color: transparent;
+    -fx-border-color: #CBD5E1;
+    -fx-text-fill: #0F172A;
+    -fx-background-radius: 20;
+    -fx-padding: 8 18;
 }
