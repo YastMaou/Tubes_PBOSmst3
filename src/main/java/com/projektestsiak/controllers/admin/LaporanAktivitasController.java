@@ -8,7 +8,12 @@ import javafx.scene.Scene;
 import javafx.scene.control.ListView;
 import javafx.stage.Stage;
 
+
+// OOP Class & Object
 public class LaporanAktivitasController {
+
+
+    // encapsulation OOP Membungkus data dan method agar tidak bisa diakses sembarangan dari luar
 
     @FXML private ListView<String> list;
 
@@ -33,8 +38,10 @@ public class LaporanAktivitasController {
     @FXML
     private void handleBack() throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("/fxml/admin/laporan_menu.fxml"));
+
+        // Inheritance OOP
         Stage stage = (Stage) list.getScene().getWindow();
-        stage.setScene(new Scene(root, 1200, 700));
+        stage.setScene(new Scene(root, 1000, 700));
         stage.setTitle("Sistem Akademik Sekolah - Laporan Akademik");
     }
 }

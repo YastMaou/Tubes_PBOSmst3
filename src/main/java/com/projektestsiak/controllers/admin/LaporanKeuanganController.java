@@ -14,6 +14,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
+// OOP Class & Object
 public class LaporanKeuanganController {
 
     @FXML private TableView<KeuanganDummy> table;
@@ -27,9 +28,8 @@ public class LaporanKeuanganController {
         colKeterangan.setCellValueFactory(new PropertyValueFactory<>("keterangan"));
         colJumlah.setCellValueFactory(new PropertyValueFactory<>("jumlah"));
 
-        /* =========================
-           FORMAT RUPIAH + BADGE WARNA
-        ========================== */
+// Format rupiah + warna hijau/merah
+// OOP Inheritance TableCell
         colJumlah.setCellFactory(column -> new TableCell<>() {
 
             private final NumberFormat rupiah =
@@ -68,7 +68,7 @@ public class LaporanKeuanganController {
     private void handleBack() throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("/fxml/admin/laporan_menu.fxml"));
         Stage stage = (Stage) table.getScene().getWindow();
-        stage.setScene(new Scene(root, 1200, 700));
+        stage.setScene(new Scene(root, 1000, 700));
     }
 
     @FXML
@@ -76,9 +76,8 @@ public class LaporanKeuanganController {
         table.refresh();
     }
 
-    /* =========================
-       DUMMY MODEL
-    ========================== */
+// Encapsulation
+// Dummy Data Class
     public static class KeuanganDummy {
         private String tanggal, keterangan;
         private int jumlah;
