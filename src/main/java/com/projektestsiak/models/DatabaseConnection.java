@@ -191,7 +191,7 @@ public class DatabaseConnection {
         
         // Hanya buat 2 student: Bahlil Lahadalia dan Budi Arie
         String[][] students = {
-            {"Bahlil Lahadalia", "bahlil", "bahlil@siak.ac.id", "082222222222", "student123", "student"},
+            {"Bahlil Lahadalia", "bahlil", "bahlil@siak.ac.id", "082222222222", "bahlilpass", "student"},
             {"Budi Arie", "budiarie", "budiarie@siak.ac.id", "083333333333", "budipass", "student"}
         };
         
@@ -213,7 +213,7 @@ public class DatabaseConnection {
         // Cek jika user Budi Arie sudah ada
         String checkSql = "SELECT COUNT(*) FROM users WHERE username = 'budiarie'";
         try (PreparedStatement stmt = connection.prepareStatement(checkSql);
-             ResultSet rs = stmt.executeQuery()) {
+            ResultSet rs = stmt.executeQuery()) {
             
             rs.next();
             int count = rs.getInt(1);
@@ -341,7 +341,7 @@ public class DatabaseConnection {
             // Tambahkan jadwal untuk testing
             String checkJadwal = "SELECT COUNT(*) FROM jadwal";
             try (PreparedStatement stmt = connection.prepareStatement(checkJadwal);
-                 ResultSet rs = stmt.executeQuery()) {
+                ResultSet rs = stmt.executeQuery()) {
                 
                 rs.next();
                 if (rs.getInt(1) < 3) {
@@ -363,7 +363,7 @@ public class DatabaseConnection {
             // Tambahkan tugas untuk testing
             String checkTugas = "SELECT COUNT(*) FROM tugas";
             try (PreparedStatement stmt = connection.prepareStatement(checkTugas);
-                 ResultSet rs = stmt.executeQuery()) {
+                ResultSet rs = stmt.executeQuery()) {
                 
                 rs.next();
                 if (rs.getInt(1) < 3) {

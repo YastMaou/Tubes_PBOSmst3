@@ -68,8 +68,12 @@
 }
 
 /* ==========================================================
+
+.btn-primary {
+    -fx-background-color: linear-gradient(to right, #0EA5E9, #2563EB);
+    -fx-text-fill: white;
+    -fx-background-radius: 24;
    BUTTON SYSTEM (ATOMIC)
-========================================================== */
 
 /* PRIMARY (TAMBAH, REFRESH) */
 .btn-primary {
@@ -177,8 +181,9 @@
 }
 
 /* ==========================================================
+
+/* KODE */
    ATOMIC COLOR SEMANTIC PER COLUMN
-========================================================== */
 
 .col-kode .table-cell {
     -fx-text-fill: #475569;
@@ -236,7 +241,6 @@
 
 /* ==========================================================
    TABLE MODERN - WARNA TEKS BIRU (ATOMIC DESIGN)
-========================================================== */
 
 /* Header tabel */
 .table-view .column-header-background {
@@ -265,7 +269,6 @@
 
 /* ==========================================================
    KOLOM BERWARNA BIRU
-========================================================== */
 
 /* Kode */
 .col-kode {
@@ -302,7 +305,6 @@
 
 /* ==========================================================
    BUTTON (KONSISTENSI WARNA)
-========================================================== */
 
 .btn-primary {
     -fx-background-color: linear-gradient(to right, #2563EB, #0EA5E9);
