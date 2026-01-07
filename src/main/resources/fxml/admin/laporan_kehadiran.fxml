@@ -3,26 +3,51 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane xmlns="http://javafx.com/javafx/11"
+<BorderPane xmlns="http://javafx.com/javafx/17"
             xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="com.projektestsiak.controllers.admin.LaporanKehadiranController">
+            fx:controller="com.projektestsiak.controllers.admin.LaporanKehadiranController"
+            stylesheets="@/css/layouts/laporan-kehadiran.css"
+            styleClass="laporan-root">
 
+    <!-- =========================
+         HEADER
+    ========================== -->
     <top>
-        <HBox spacing="10" style="-fx-padding: 15; -fx-background-color: #2c3e50;">
-            <Button text="← Back" onAction="#handleBack"/>
-            <Label text="Laporan Kehadiran"
-                   style="-fx-text-fill: white; -fx-font-size: 18px; -fx-font-weight: bold;"/>
+        <HBox spacing="16" alignment="CENTER_LEFT" styleClass="laporan-header">
+            <Button text="← Kembali"
+                    onAction="#handleBack"
+                    styleClass="btn-outline"/>
+
+            <VBox spacing="2">
+                <Label text="Laporan Kehadiran" styleClass="laporan-title"/>
+                <Label text="Rekap kehadiran siswa per tanggal"
+                       styleClass="laporan-subtitle"/>
+            </VBox>
         </HBox>
     </top>
 
+    <!-- =========================
+         CONTENT
+    ========================== -->
     <center>
-        <TableView fx:id="table">
-            <columns>
-                <TableColumn text="Nama Siswa" fx:id="colNama" prefWidth="200"/>
-                <TableColumn text="Tanggal" fx:id="colTanggal" prefWidth="150"/>
-                <TableColumn text="Status" fx:id="colStatus" prefWidth="150"/>
-            </columns>
-        </TableView>
+        <VBox spacing="16" styleClass="laporan-container">
+
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Label text="Data Kehadiran" styleClass="section-title"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <Button text="Refresh" styleClass="btn-primary"/>
+            </HBox>
+
+            <TableView fx:id="table" styleClass="table-view" VBox.vgrow="ALWAYS">
+    <columns>
+        <TableColumn fx:id="colNama" text="Nama Siswa" prefWidth="300"/>
+        <TableColumn fx:id="colTanggal" text="Tanggal" prefWidth="200"/>
+        <TableColumn fx:id="colStatus" text="Status Kehadiran" prefWidth="250"/>
+    </columns>
+</TableView>
+
+
+        </VBox>
     </center>
 
 </BorderPane>

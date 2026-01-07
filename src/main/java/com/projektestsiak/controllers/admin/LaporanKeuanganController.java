@@ -1,10 +1,14 @@
 package com.projektestsiak.controllers.admin;
 
+import java.text.NumberFormat;
+import java.util.Locale;
+
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -23,9 +27,40 @@ public class LaporanKeuanganController {
         colKeterangan.setCellValueFactory(new PropertyValueFactory<>("keterangan"));
         colJumlah.setCellValueFactory(new PropertyValueFactory<>("jumlah"));
 
+        /* =========================
+           FORMAT RUPIAH + BADGE WARNA
+        ========================== */
+        colJumlah.setCellFactory(column -> new TableCell<>() {
+
+            private final NumberFormat rupiah =
+                    NumberFormat.getCurrencyInstance(new Locale("id", "ID"));
+
+            @Override
+            protected void updateItem(Integer item, boolean empty) {
+                super.updateItem(item, empty);
+
+                if (empty || item == null) {
+                    setText(null);
+                    getStyleClass().removeAll("amount-positive", "amount-negative");
+                } else {
+                    setText(rupiah.format(item));
+                    setAlignment(javafx.geometry.Pos.CENTER_RIGHT);
+
+                    getStyleClass().removeAll("amount-positive", "amount-negative");
+
+                    if (item >= 0) {
+                        getStyleClass().add("amount-positive"); // hijau
+                    } else {
+                        getStyleClass().add("amount-negative"); // merah
+                    }
+                }
+            }
+        });
+
         table.setItems(FXCollections.observableArrayList(
             new KeuanganDummy("01-01-2026", "SPP Januari", 500000),
-            new KeuanganDummy("02-01-2026", "Uang Gedung", 2000000)
+            new KeuanganDummy("02-01-2026", "Uang Gedung", 2000000),
+            new KeuanganDummy("03-01-2026", "Biaya Operasional", -750000)
         ));
     }
 
@@ -36,12 +71,24 @@ public class LaporanKeuanganController {
         stage.setScene(new Scene(root, 1200, 700));
     }
 
+    @FXML
+    private void handleRefresh() {
+        table.refresh();
+    }
+
+    /* =========================
+       DUMMY MODEL
+    ========================== */
     public static class KeuanganDummy {
         private String tanggal, keterangan;
         private int jumlah;
+
         public KeuanganDummy(String t, String k, int j) {
-            tanggal = t; keterangan = k; jumlah = j;
+            tanggal = t;
+            keterangan = k;
+            jumlah = j;
         }
+
         public String getTanggal() { return tanggal; }
         public String getKeterangan() { return keterangan; }
         public int getJumlah() { return jumlah; }

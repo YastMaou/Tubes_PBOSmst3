@@ -116,7 +116,7 @@
                         <TableColumn fx:id="colDosen" text="Dosen" prefWidth="150" styleClass="col-dosen"/>
                         <TableColumn fx:id="colHari" text="Hari" prefWidth="100" styleClass="col-hari"/>
                         <TableColumn fx:id="colJam" text="Jam" prefWidth="120" styleClass="col-jam"/>
-                        <TableColumn fx:id="colRuangan" text="Ruangan" prefWidth="100" styleClass="col-ruang"/>
+                        <TableColumn fx:id="colRuangan" text="Ruangan" prefWidth="100" styleClass="col-ruangan"/>
                     </columns>
                 </TableView>
 

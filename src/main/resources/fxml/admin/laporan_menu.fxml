@@ -5,45 +5,54 @@
 
 <BorderPane xmlns="http://javafx.com/javafx/11"
             xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="com.projektestsiak.controllers.admin.LaporanMenuController">
+            fx:controller="com.projektestsiak.controllers.admin.LaporanMenuController"
+            stylesheets="@/css/layouts/laporan-menu.css"
+            styleClass="laporan-menu-root">
 
     <!-- HEADER -->
     <top>
-        <HBox spacing="15" style="-fx-padding:20; -fx-background-color:#2c3e50;">
+        <HBox spacing="15" alignment="CENTER_LEFT" styleClass="laporan-menu-header">
             <Button fx:id="btnBack"
-                    text="← Back"
+                    text="← Kembali"
                     onAction="#handleBack"
-                    style="-fx-background-color:transparent; -fx-text-fill:white;"/>
+                    styleClass="btn-outline"/>
+
             <Label text="Laporan Akademik"
-                   style="-fx-text-fill:white; -fx-font-size:18px; -fx-font-weight:bold;"/>
+                   styleClass="laporan-menu-title"/>
         </HBox>
     </top>
 
     <!-- CONTENT -->
     <center>
-        <GridPane alignment="CENTER" hgap="30" vgap="30">
+        <StackPane>
+            <GridPane alignment="CENTER" hgap="30" vgap="30" styleClass="laporan-menu-grid">
 
-            <Button text="📄 Laporan Nilai"
-                    prefWidth="260" prefHeight="80"
-                    onAction="#openNilai"
-                    GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                <Button text="📄 Laporan Nilai"
+                        prefWidth="260" prefHeight="80"
+                        onAction="#openNilai"
+                        styleClass="laporan-card"
+                        GridPane.rowIndex="0" GridPane.columnIndex="0"/>
 
-            <Button text="📅 Laporan Kehadiran"
-                    prefWidth="260" prefHeight="80"
-                    onAction="#openKehadiran"
-                    GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+                <Button text="📅 Laporan Kehadiran"
+                        prefWidth="260" prefHeight="80"
+                        onAction="#openKehadiran"
+                        styleClass="laporan-card"
+                        GridPane.rowIndex="0" GridPane.columnIndex="1"/>
 
-            <Button text="💰 Laporan Keuangan"
-                    prefWidth="260" prefHeight="80"
-                    onAction="#openKeuangan"
-                    GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                <Button text="💰 Laporan Keuangan"
+                        prefWidth="260" prefHeight="80"
+                        onAction="#openKeuangan"
+                        styleClass="laporan-card"
+                        GridPane.rowIndex="1" GridPane.columnIndex="0"/>
 
-            <Button text="📊 Laporan Aktivitas"
-                    prefWidth="260" prefHeight="80"
-                    onAction="#openAktivitas"
-                    GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+                <Button text="📊 Laporan Aktivitas"
+                        prefWidth="260" prefHeight="80"
+                        onAction="#openAktivitas"
+                        styleClass="laporan-card"
+                        GridPane.rowIndex="1" GridPane.columnIndex="1"/>
 
-        </GridPane>
+            </GridPane>
+        </StackPane>
     </center>
 
 </BorderPane>

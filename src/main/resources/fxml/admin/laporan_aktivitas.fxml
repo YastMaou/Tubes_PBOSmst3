@@ -3,20 +3,48 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane xmlns="http://javafx.com/javafx/11"
+<BorderPane xmlns="http://javafx.com/javafx/17"
             xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="com.projektestsiak.controllers.admin.LaporanAktivitasController">
+            fx:controller="com.projektestsiak.controllers.admin.LaporanAktivitasController"
+            stylesheets="@/css/layouts/laporan-aktivitas.css"
+            styleClass="laporan-root">
 
+    <!-- =========================
+         HEADER
+    ========================== -->
     <top>
-        <HBox spacing="10" style="-fx-padding: 15; -fx-background-color: #2c3e50;">
-            <Button text="← Back" onAction="#handleBack"/>
-            <Label text="Laporan Aktivitas"
-                   style="-fx-text-fill: white; -fx-font-size: 18px; -fx-font-weight: bold;"/>
+        <HBox spacing="16" alignment="CENTER_LEFT" styleClass="laporan-header">
+            <Button text="← Kembali"
+                    onAction="#handleBack"
+                    styleClass="btn-outline"/>
+
+            <VBox spacing="2">
+                <Label text="Laporan Aktivitas" styleClass="laporan-title"/>
+                <Label text="Riwayat aktivitas administrator dan sistem"
+                       styleClass="laporan-subtitle"/>
+            </VBox>
         </HBox>
     </top>
 
+    <!-- =========================
+         CONTENT
+    ========================== -->
     <center>
-        <ListView fx:id="list"/>
+        <VBox spacing="16" styleClass="laporan-container">
+
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Label text="Daftar Aktivitas" styleClass="section-title"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <Button text="Refresh"
+                        onAction="#handleRefresh"
+                        styleClass="btn-primary"/>
+            </HBox>
+
+            <ListView fx:id="list"
+                      styleClass="activity-list"
+                      VBox.vgrow="ALWAYS"/>
+
+        </VBox>
     </center>
 
 </BorderPane>
