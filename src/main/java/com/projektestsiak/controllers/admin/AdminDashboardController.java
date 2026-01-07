@@ -211,13 +211,7 @@ public class AdminDashboardController {
         SessionManager.logout();
         loadScene("/fxml/auth/login.fxml");
     }
-    
-    @FXML
-    private void handleManageUsers() {
-        // Untuk sementara tampilkan alert, nanti bisa diarahkan ke halaman manajemen user
-        showAlert("Info", "Fitur Manajemen User akan segera hadir!\n\nFitur yang tersedia sekarang:\n1. Dashboard Statistik\n2. Manajemen Jadwal\n3. Validasi Pendaftaran\n4. Penilaian Tugas");
-    }
-    
+
     @FXML
     private void handleManageCourses() {
         showAlert("Info", "Fitur Manajemen Mata Pelajaran akan segera hadir!\n\nAnda dapat melihat daftar mata pelajaran di Database.\nTotal mata pelajaran: " + quickTotalCourses.getText());
@@ -239,15 +233,10 @@ public class AdminDashboardController {
     }
     
     @FXML
-    private void handleReports() {
-        showAlert("Info", "Fitur Laporan akan segera hadir!\n\nLaporan yang akan tersedia:\n1. Laporan Nilai Siswa\n2. Laporan Kehadiran\n3. Laporan Keuangan\n4. Laporan Aktivitas");
-    }
-    
-    @FXML
-    private void handleSettings() {
-        showAlert("Info", "Fitur Pengaturan akan segera hadir!\n\nPengaturan yang akan tersedia:\n1. Pengaturan Sistem\n2. Pengaturan User\n3. Pengaturan Akademik\n4. Backup Database");
-    }
-    
+private void handleReports() {
+    loadScene("/fxml/admin/laporan_menu.fxml");
+}
+
     @FXML
     private void handleRefreshStats() {
         loadStatistics();
@@ -260,7 +249,7 @@ public class AdminDashboardController {
             FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlPath));
             Parent root = loader.load();
             Stage stage = (Stage) welcomeLabel.getScene().getWindow();
-            stage.setScene(new Scene(root, 1200, 700));
+            stage.setScene(new Scene(root, 1000, 700));
             stage.setTitle("Sistem Akademik Sekolah - " + getPageTitle(fxmlPath));
             
             // Stop clock jika pindah scene

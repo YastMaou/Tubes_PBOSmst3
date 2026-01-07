@@ -1,0 +1,5 @@
+.root {
+    -fx-shadow-sm: dropshadow(three-pass-box, rgba(0,0,0,0.05), 6, 0, 0, 2);
+    -fx-shadow-md: dropshadow(three-pass-box, rgba(0,0,0,0.08), 12, 0, 0, 4);
+    -fx-shadow-lg: dropshadow(three-pass-box, rgba(0,0,0,0.12), 20, 0, 0, 8);
+}

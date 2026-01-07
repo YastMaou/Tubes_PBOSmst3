@@ -1,0 +1,8 @@
+.nav-item {
+    -fx-padding: 10px 16px;
+    -fx-text-fill: -fx-text-main;
+}
+
+.nav-item:hover {
+    -fx-background-color: -fx-bg-soft;
+}

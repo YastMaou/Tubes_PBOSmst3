@@ -18,7 +18,7 @@ public class App extends Application {
             
             // Load login page
             Parent root = FXMLLoader.load(getClass().getResource("/fxml/auth/login.fxml"));
-            Scene scene = new Scene(root, 800, 600);
+            Scene scene = new Scene(root, 1000, 700);
             
             // Load CSS - PASTIKAN PATH INI BENAR
             try {
