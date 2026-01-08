@@ -1,60 +1,107 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextArea?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.GridPane?>
 
-<VBox xmlns="http://javafx.com/javafx/11.0.1" 
-      xmlns:fx="http://javafx.com/fxml/1" 
-      fx:controller="com.projektestsiak.controllers.akademik.PengumpulanTugasController"
-      spacing="20" style="-fx-padding: 30; -fx-background-color: #f5f6fa;">
+<BorderPane xmlns="http://javafx.com/javafx/17"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.projektestsiak.controllers.akademik.PengumpulanTugasController"
+            stylesheets="@/css/layouts/pengumpulan-tugas.css"
+            styleClass="page-root">
 
-    <!-- Header -->
-    <HBox spacing="20" alignment="CENTER_LEFT">
-        <Button text="← Kembali" onAction="#handleBack" 
-               style="-fx-background-color: #95a5a6; -fx-text-fill: white; -fx-background-radius: 8; -fx-padding: 8 16;" />
-        <Label text="Pengumpulan Tugas" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;" />
-    </HBox>
+    <!-- ================= HEADER ================= -->
+    <top>
+        <VBox spacing="8" styleClass="page-header">
+            <HBox alignment="CENTER_LEFT" spacing="15">
+                <Button text="← Kembali"
+                        onAction="#handleBack"
+                        styleClass="btn-secondary"/>
 
-    <!-- Form -->
-    <GridPane hgap="15" vgap="15" style="-fx-background-color: white; -fx-background-radius: 15; -fx-padding: 30;">
-        <Label text="Informasi Tugas" style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;" 
-               GridPane.columnSpan="2" GridPane.rowIndex="0" />
-        
-        <Label text="Mata Kuliah:" GridPane.rowIndex="1" GridPane.columnIndex="0" 
-               style="-fx-font-weight: bold; -fx-text-fill: #2c3e50;" />
-        <Label fx:id="mataKuliahLabel" GridPane.rowIndex="1" GridPane.columnIndex="1" />
-        
-        <Label text="Judul Tugas:" GridPane.rowIndex="2" GridPane.columnIndex="0" 
-               style="-fx-font-weight: bold; -fx-text-fill: #2c3e50;" />
-        <Label fx:id="judulLabel" GridPane.rowIndex="2" GridPane.columnIndex="1" />
-        
-        <Label text="Deadline:" GridPane.rowIndex="3" GridPane.columnIndex="0" 
-               style="-fx-font-weight: bold; -fx-text-fill: #2c3e50;" />
-        <Label fx:id="deadlineLabel" GridPane.rowIndex="3" GridPane.columnIndex="1" />
-        
-        <Label text="Deskripsi:" GridPane.rowIndex="4" GridPane.columnIndex="0" 
-               style="-fx-font-weight: bold; -fx-text-fill: #2c3e50;" />
-        <TextArea fx:id="deskripsiArea" prefRowCount="3" prefWidth="400" 
-                 GridPane.rowIndex="4" GridPane.columnIndex="1" />
-        
-        <Label text="File Tugas:" GridPane.rowIndex="5" GridPane.columnIndex="0" 
-               style="-fx-font-weight: bold; -fx-text-fill: #2c3e50;" />
-        <HBox spacing="10" GridPane.rowIndex="5" GridPane.columnIndex="1">
-            <TextField fx:id="filePathField" prefWidth="300" />
-            <Button text="Browse" onAction="#handleBrowseFile" 
-                   style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-background-radius: 8;" />
-        </HBox>
-        
-        <HBox spacing="15" GridPane.rowIndex="6" GridPane.columnIndex="1">
-            <Button text="Submit Tugas" onAction="#handleSubmit" 
-                   style="-fx-background-color: #27ae60; -fx-text-fill: white; -fx-background-radius: 8; -fx-padding: 10 20;" />
-        </HBox>
-    </GridPane>
+                <Label text="Pengumpulan Tugas"
+                       styleClass="page-title"/>
 
-</VBox>
+                <Region HBox.hgrow="ALWAYS"/>
+            </HBox>
+
+            <Label text="Kumpulkan tugas sesuai mata kuliah dan tenggat waktu"
+                   styleClass="subtitle"/>
+        </VBox>
+    </top>
+
+    <!-- ================= CONTENT ================= -->
+    <center>
+        <VBox spacing="25">
+            <!-- FIX: Padding harus format Insets -->
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20"/>
+            </padding>
+
+            <!-- ===== INFO CARD ===== -->
+            <VBox spacing="18" styleClass="card">
+
+                <Label text="Informasi Tugas"
+                       styleClass="section-title"/>
+
+                <GridPane hgap="20" vgap="15">
+                    <columnConstraints>
+                        <ColumnConstraints prefWidth="160"/>
+                        <ColumnConstraints hgrow="ALWAYS"/>
+                    </columnConstraints>
+
+                    <Label text="Mata Kuliah:" styleClass="label-muted"
+                           GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                    <Label fx:id="mataKuliahLabel"
+                           styleClass="value-text"
+                           GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+                    <Label text="Judul Tugas:" styleClass="label-muted"
+                           GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                    <Label fx:id="judulLabel"
+                           styleClass="value-text"
+                           GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+                    <Label text="Deadline:" styleClass="label-muted"
+                           GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                    <Label fx:id="deadlineLabel"
+                           styleClass="value-text deadline-text"
+                           GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+                    <Label text="Deskripsi:" styleClass="label-muted"
+                           GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+                    <TextArea fx:id="deskripsiArea"
+                              prefRowCount="4"
+                              wrapText="true"
+                              editable="false"
+                              styleClass="text-area-readonly"
+                              GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+                    <Label text="File Tugas:" styleClass="label-muted"
+                           GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+
+                    <HBox spacing="10"
+                          GridPane.rowIndex="4" GridPane.columnIndex="1">
+                        <TextField fx:id="filePathField"
+                                   promptText="Pilih file tugas"
+                                   styleClass="input-text"
+                                   prefWidth="280"/>
+                        <Button text="Browse"
+                                onAction="#handleBrowseFile"
+                                styleClass="btn-outline"/>
+                    </HBox>
+
+                    <HBox spacing="12"
+                          GridPane.rowIndex="5" GridPane.columnIndex="1">
+                        <Button text="Submit Tugas"
+                                onAction="#handleSubmit"
+                                styleClass="btn-primary"
+                                prefWidth="160"/>
+                    </HBox>
+                </GridPane>
+
+            </VBox>
+
+        </VBox>
+    </center>
+
+</BorderPane>

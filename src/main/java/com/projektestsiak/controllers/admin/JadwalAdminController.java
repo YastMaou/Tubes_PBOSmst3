@@ -79,6 +79,7 @@ public class JadwalAdminController {
         mataKuliahComboBox.setItems(mataKuliahList);
         
         // Setup cell factory untuk menampilkan nama mata kuliah
+        // OOP inheritance ListCell
         mataKuliahComboBox.setCellFactory(param -> new ListCell<MataKuliah>() {
             @Override
             protected void updateItem(MataKuliah item, boolean empty) {
@@ -146,6 +147,8 @@ public class JadwalAdminController {
             String jamSelesai = jamSelesaiField.getText();
             String ruangan = ruanganField.getText();
             
+            // Abstraction 
+
             boolean success = jadwalModel.tambahJadwal(
                 selectedMk.getId(), hari, jamMulai, jamSelesai, ruangan
             );
@@ -262,6 +265,8 @@ public class JadwalAdminController {
             return false;
         }
         
+
+        // Method isValidTimeFormat
         // Validasi format jam
         if (!isValidTimeFormat(jamMulaiField.getText())) {
             showAlert("Validasi Error", "Format jam mulai tidak valid! Gunakan format HH:mm");

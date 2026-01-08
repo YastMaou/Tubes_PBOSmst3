@@ -7,6 +7,8 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.scene.control.Button;
 
+
+// OOP Class & Object
 public class LaporanMenuController {
 
     @FXML private Button btnBack;
@@ -15,7 +17,7 @@ public class LaporanMenuController {
         try {
             Parent root = FXMLLoader.load(getClass().getResource(fxml));
             Stage stage = (Stage) btnBack.getScene().getWindow();
-            stage.setScene(new Scene(root, 1200, 700));
+            stage.setScene(new Scene(root, 1000, 700));
             stage.setTitle("Sistem Akademik Sekolah - " + title);
         } catch (Exception e) {
             e.printStackTrace();

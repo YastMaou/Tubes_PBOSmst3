@@ -16,7 +16,7 @@ import java.io.File;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
-
+// OOP Class & Object
 public class ValidasiController {
 
     @FXML private TableView<ValidasiModel.PendaftaranDetail> pendaftaranTable;
@@ -120,7 +120,7 @@ public class ValidasiController {
         confirmation.setHeaderText(null);
         confirmation.setContentText("Setujui pendaftaran " + selectedPendaftaran.getNamaSiswa() + 
                                   " untuk mata kuliah " + selectedPendaftaran.getNamaMataKuliah() + "?");
-        
+        // OOP ABSTRAKSI
         if (confirmation.showAndWait().get() == ButtonType.OK) {
             boolean success = validasiModel.approvePendaftaran(selectedPendaftaran.getId());
             
@@ -142,6 +142,7 @@ public class ValidasiController {
         }
         
         // Dialog untuk input alasan penolakan
+        // inheritance OOP Alert
         TextInputDialog dialog = new TextInputDialog();
         dialog.setTitle("Penolakan Pendaftaran");
         dialog.setHeaderText("Alasan Penolakan");

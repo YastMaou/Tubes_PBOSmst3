@@ -1,0 +1,160 @@
+/* ===============================
+   ROOT
+=============================== */
+.page-root {
+    -fx-background-color: #f5f7fb;
+    -fx-padding: 20;
+}
+
+/* ===============================
+   HEADER
+=============================== */
+.page-title {
+    -fx-font-size: 26px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1f2937;
+}
+
+.subtitle {
+    -fx-text-fill: #6b7280;
+    -fx-font-size: 13px;
+}
+
+/* ===============================
+   BUTTONS
+=============================== */
+.btn-back {
+    -fx-background-color: #9ca3af;
+    -fx-text-fill: white;
+    -fx-background-radius: 14;
+    -fx-padding: 8 18;
+}
+
+.btn-refresh {
+    -fx-background-color: #3b82f6;
+    -fx-text-fill: white;
+    -fx-background-radius: 14;
+    -fx-padding: 8 18;
+}
+
+/* ===============================
+   FILTER CARD
+=============================== */
+.filter-card {
+    -fx-background-color: white;
+    -fx-background-radius: 16;
+    -fx-padding: 14 18;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.06), 12, 0, 0, 4);
+}
+
+/* ===============================
+   TABLE CONTAINER
+=============================== */
+.table-card {
+    -fx-background-color: white;
+    -fx-background-radius: 18;
+    -fx-padding: 12;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.06), 14, 0, 0, 6);
+}
+
+/* ===============================
+   TABLE BASE
+=============================== */
+.custom-table {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+/* Remove default borders */
+.custom-table .filler,
+.custom-table .corner {
+    -fx-background-color: transparent;
+}
+
+/* ===============================
+   TABLE HEADER (EMERALD SOFT)
+=============================== */
+.custom-table .column-header-background {
+    -fx-background-color: linear-gradient(to bottom, #34d399, #10b981);
+    -fx-background-radius: 14 14 0 0;
+    -fx-padding: 6 0;
+}
+
+.custom-table .column-header {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+.custom-table .column-header .label {
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+    -fx-font-size: 13px;
+}
+
+/* ===============================
+   TABLE ROWS
+=============================== */
+.custom-table .table-row-cell {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+/* Zebra striping */
+.custom-table .table-row-cell:odd {
+    -fx-background-color: #f9fafb;
+}
+.custom-table .table-row-cell:even {
+    -fx-background-color: white;
+}
+
+/* Hover */
+.custom-table .table-row-cell:hover {
+    -fx-background-color: #ecfdf5;
+}
+
+/* Selected */
+.custom-table .table-row-cell:selected {
+    -fx-background-color: #d1fae5;
+    -fx-text-fill: #065f46;
+}
+
+/* ===============================
+   TABLE CELLS
+=============================== */
+.custom-table .table-cell {
+    -fx-padding: 10 12;
+    -fx-border-color: transparent transparent #f1f5f9 transparent;
+    -fx-text-fill: #1f2937;
+    -fx-font-size: 12.5px;
+}
+
+/* ===============================
+   SCROLLBAR
+=============================== */
+.custom-table .scroll-bar:vertical {
+    -fx-background-color: transparent;
+}
+
+.custom-table .scroll-bar:vertical .thumb {
+    -fx-background-color: #a7f3d0;
+    -fx-background-radius: 8;
+}
+
+/* ===============================
+   INFO BAR
+=============================== */
+.info-bar {
+    -fx-background-color: #f0fdf4;
+    -fx-background-radius: 10;
+    -fx-padding: 10 12;
+    -fx-text-fill: #065f46;
+}
+
+/* ===============================
+   COMBOBOX
+=============================== */
+.combo-box {
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+    -fx-padding: 4 10;
+}

@@ -1,0 +1,81 @@
+/* Root */
+.page-root {
+    -fx-background-color: #f5f7fb;
+    -fx-font-family: "Segoe UI", Arial, sans-serif;
+}
+
+/* Header */
+.page-header {
+    -fx-background-color: transparent;
+    -fx-padding: 20 20 10 20;
+}
+
+.page-title {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1f2d3d;
+}
+
+/* Buttons */
+.btn-primary {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+    -fx-background-radius: 10;
+    -fx-padding: 10 20;
+}
+
+.btn-success {
+    -fx-background-color: #27ae60;
+    -fx-text-fill: white;
+    -fx-background-radius: 10;
+    -fx-padding: 10 20;
+}
+
+.btn-secondary {
+    -fx-background-color: #95a5a6;
+    -fx-text-fill: white;
+    -fx-background-radius: 10;
+    -fx-padding: 8 16;
+}
+
+/* Card */
+.card {
+    -fx-background-color: white;
+    -fx-background-radius: 14;
+    -fx-padding: 12;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.06), 12, 0, 0, 4);
+}
+
+/* Table */
+.custom-table {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+.custom-table .column-header-background {
+    -fx-background-color: linear-gradient(to right, #2f6fed, #3b82f6);
+    -fx-background-radius: 12 12 0 0;
+}
+
+.custom-table .column-header,
+.custom-table .filler {
+    -fx-background-color: transparent;
+    -fx-size: 40px;
+}
+
+.custom-table .column-header .label {
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.custom-table .table-row-cell {
+    -fx-background-color: transparent;
+}
+
+.custom-table .table-row-cell:filled:selected {
+    -fx-background-color: #eaf2ff;
+}
+
+.custom-table .table-row-cell:filled:hover {
+    -fx-background-color: #f0f5ff;
+}
