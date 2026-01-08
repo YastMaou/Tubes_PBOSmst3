@@ -1,0 +1,19 @@
+.root {
+    /* Brand */
+    -fx-primary: #10B981;          /* Emerald */
+    -fx-primary-hover: #059669;
+    -fx-secondary: #06B6D4;        /* Cyan */
+
+    /* Backgrounds */
+    -fx-bg-main: #F8FAFC;          /* App background */
+    -fx-bg-surface: #FFFFFF;      /* Card, panel */
+    -fx-bg-soft: #F1F5F9;         /* Subtle sections */
+
+    /* Borders */
+    -fx-border-subtle: #E2E8F0;
+
+    /* Text */
+    -fx-text-main: #0F172A;
+    -fx-text-muted: #64748B;
+    -fx-text-invert: #FFFFFF;
+}

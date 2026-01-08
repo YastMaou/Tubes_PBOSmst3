@@ -1,0 +1,7 @@
+.root {
+    -fx-space-xs: 4px;
+    -fx-space-sm: 8px;
+    -fx-space-md: 16px;
+    -fx-space-lg: 24px;
+    -fx-space-xl: 32px;
+}

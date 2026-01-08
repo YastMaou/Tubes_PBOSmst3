@@ -1,0 +1,203 @@
+/* ===============================
+   ROOT PAGE
+=============================== */
+.page-root {
+    -fx-background-color: #f5f7fb;
+    -fx-padding: 16;
+}
+
+/* ===============================
+   HEADER
+=============================== */
+.page-header {
+    -fx-padding: 10 10 15 10;
+    -fx-background-color: #f5f7fb;
+    -fx-border-color: #e5e7eb;
+    -fx-border-width: 0 0 1 0;
+}
+
+
+.page-title {
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1f2d3d;
+}
+
+.subtitle {
+    -fx-text-fill: #6b7280;
+    -fx-font-size: 13px;
+}
+
+/* ===============================
+   CONTENT SPLIT
+=============================== */
+.content-split {
+    -fx-background-color: transparent;
+    -fx-padding: 15 0 0 0;
+}
+
+.content-split > .split-pane-divider {
+    -fx-background-color: transparent;
+    -fx-padding: 0 2 0 2;
+}
+
+/* ===============================
+   CARD CONTAINER
+=============================== */
+.card {
+    -fx-background-color: white;
+    -fx-background-radius: 14;
+    -fx-padding: 16;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.08), 10, 0, 0, 4);
+}
+
+/* ===============================
+   SECTION TITLE
+=============================== */
+.section-title {
+    -fx-font-size: 17px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1f2d3d;
+}
+
+/* ===============================
+   LABEL STYLES
+=============================== */
+.label-muted {
+    -fx-text-fill: #7f8c8d;
+    -fx-font-size: 12px;
+}
+
+.label-bold {
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50;
+}
+
+.label-warning {
+    -fx-text-fill: #e74c3c;
+    -fx-font-size: 12px;
+    -fx-font-style: italic;
+}
+
+/* ===============================
+   INFO BAR
+=============================== */
+.info-bar {
+    -fx-background-color: #f8fafc;
+    -fx-padding: 8 10;
+    -fx-background-radius: 8;
+}
+
+/* ===============================
+   IMAGE PREVIEW
+=============================== */
+.image-preview {
+    -fx-border-color: #e5e7eb;
+    -fx-border-radius: 8;
+    -fx-background-color: #f9fafb;
+}
+
+/* ===============================
+   TABLE
+=============================== */
+.table-view {
+    -fx-background-color: transparent;
+    -fx-border-color: #e5e7eb;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: linear-gradient(to bottom, #f3f4f6, #e5e7eb);
+    -fx-background-radius: 10 10 0 0;
+}
+
+.table-view .column-header {
+    -fx-background-color: transparent;
+}
+
+.table-view .column-header .label {
+    -fx-font-weight: bold;
+    -fx-text-fill: #1f2d3d;
+    -fx-font-size: 12px;
+}
+
+.table-view .table-row-cell {
+    -fx-border-color: transparent;
+    -fx-cell-size: 32px;
+}
+
+.table-view .table-row-cell:filled:selected {
+    -fx-background-color: #dbeafe;
+}
+
+.table-view .table-row-cell:filled:hover {
+    -fx-background-color: #f1f5f9;
+}
+
+/* ===============================
+   BUTTONS
+=============================== */
+.btn-outline {
+    -fx-background-color: transparent;
+    -fx-border-color: #2563eb;
+    -fx-text-fill: #2563eb;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-padding: 6 14;
+    -fx-font-weight: bold;
+}
+
+.btn-outline:hover {
+    -fx-background-color: #2563eb;
+    -fx-text-fill: white;
+}
+
+.btn-info {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+    -fx-background-radius: 10;
+    -fx-padding: 8 18;
+    -fx-font-weight: bold;
+}
+
+.btn-purple {
+    -fx-background-color: #8e44ad;
+    -fx-text-fill: white;
+    -fx-background-radius: 10;
+    -fx-padding: 8 18;
+}
+
+.btn-success {
+    -fx-background-color: #27ae60;
+    -fx-text-fill: white;
+    -fx-background-radius: 10;
+    -fx-padding: 10 18;
+    -fx-font-weight: bold;
+}
+
+.btn-danger {
+    -fx-background-color: #e74c3c;
+    -fx-text-fill: white;
+    -fx-background-radius: 10;
+    -fx-padding: 10 18;
+    -fx-font-weight: bold;
+}
+
+.button:disabled {
+    -fx-opacity: 0.5;
+}
+
+
+/* ===============================
+   FOOTER
+=============================== */
+.footer {
+    -fx-padding: 10;
+    -fx-background-color: transparent;
+}
+
+.footer-text {
+    -fx-text-fill: #9ca3af;
+    -fx-font-size: 11px;
+}

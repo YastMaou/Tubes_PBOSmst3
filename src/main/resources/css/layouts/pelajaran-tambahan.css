@@ -1,0 +1,134 @@
+/* ================= ROOT ================= */
+.pt-root {
+    -fx-background-color: #f5f7fb;
+    -fx-padding: 20;
+}
+
+/* ================= HEADER ================= */
+.page-header {
+    -fx-padding: 10 5 5 5;
+}
+
+.page-title {
+    -fx-font-size: 26px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1f2937;
+}
+
+.subtitle {
+    -fx-text-fill: #6b7280;
+    -fx-font-size: 13px;
+}
+
+.total-sks-label {
+    -fx-text-fill: #2563eb;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+}
+
+/* ================= CARD ================= */
+.card {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 16;
+    -fx-padding: 20;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.06), 12, 0.2, 0, 4);
+}
+
+/* ================= TEXT ================= */
+.section-title {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1f2937;
+}
+
+.label-muted {
+    -fx-text-fill: #6b7280;
+    -fx-font-size: 13px;
+}
+
+.label-bold {
+    -fx-font-weight: bold;
+    -fx-text-fill: #1f2937;
+}
+
+/* ================= INPUT ================= */
+.text-field {
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-border-color: #d1d5db;
+    -fx-padding: 8 12;
+}
+
+.text-field:focused {
+    -fx-border-color: #3b82f6;
+    -fx-effect: dropshadow(gaussian, rgba(59,130,246,0.25), 6, 0.2, 0, 0);
+}
+
+.combo-field {
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-border-color: #d1d5db;
+}
+
+/* ================= BUTTON ================= */
+.btn-back {
+    -fx-background-color: #9ca3af;
+    -fx-text-fill: white;
+    -fx-background-radius: 20;
+    -fx-padding: 8 16;
+}
+
+.btn-primary {
+    -fx-background-color: #2563eb;
+    -fx-text-fill: white;
+    -fx-background-radius: 12;
+    -fx-padding: 10 18;
+}
+
+.btn-secondary {
+    -fx-background-color: #3b82f6;
+    -fx-text-fill: white;
+    -fx-background-radius: 12;
+    -fx-padding: 10 18;
+}
+
+.btn-outline {
+    -fx-background-color: transparent;
+    -fx-text-fill: #2563eb;
+    -fx-border-color: #2563eb;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-padding: 8 14;
+}
+
+/* ================= TABLE ================= */
+.custom-table {
+    -fx-background-radius: 14;
+    -fx-border-radius: 14;
+    -fx-border-color: #e5e7eb;
+}
+
+.custom-table .column-header-background {
+    -fx-background-color: linear-gradient(to right, #2563eb, #3b82f6);
+    -fx-background-radius: 14 14 0 0;
+}
+
+.custom-table .column-header,
+.custom-table .filler {
+    -fx-background-color: transparent;
+    -fx-size: 40px;
+}
+
+.custom-table .column-header .label {
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+/* Row styling */
+.custom-table .table-row-cell:filled:selected {
+    -fx-background-color: #dbeafe;
+}
+
+.custom-table .table-row-cell:filled:hover {
+    -fx-background-color: #eff6ff;
+}

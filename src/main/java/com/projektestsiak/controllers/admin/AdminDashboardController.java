@@ -22,7 +22,11 @@ import java.sql.*;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
+// OOP definisi kelas AdminDashboardController
+
 public class AdminDashboardController {
+
+    // OOP Encapsulation - atribut private
     @FXML private Label welcomeLabel;
     @FXML private Label currentTimeLabel;
     @FXML private Label lastLoginLabel;
@@ -58,6 +62,8 @@ public class AdminDashboardController {
         loadQuickStats();
     }
     
+
+    // OOP Abstraction - method private untuk update waktu
     private void updateCurrentTime() {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("EEEE, dd MMMM yyyy HH:mm:ss");
         currentTimeLabel.setText(LocalDateTime.now().format(formatter));
@@ -213,12 +219,6 @@ public class AdminDashboardController {
     }
     
     @FXML
-    private void handleManageUsers() {
-        // Untuk sementara tampilkan alert, nanti bisa diarahkan ke halaman manajemen user
-        showAlert("Info", "Fitur Manajemen User akan segera hadir!\n\nFitur yang tersedia sekarang:\n1. Dashboard Statistik\n2. Manajemen Jadwal\n3. Validasi Pendaftaran\n4. Penilaian Tugas");
-    }
-    
-    @FXML
     private void handleManageCourses() {
         showAlert("Info", "Fitur Manajemen Mata Pelajaran akan segera hadir!\n\nAnda dapat melihat daftar mata pelajaran di Database.\nTotal mata pelajaran: " + quickTotalCourses.getText());
     }
@@ -245,11 +245,6 @@ private void handleReports() {
 
     
     @FXML
-    private void handleSettings() {
-        showAlert("Info", "Fitur Pengaturan akan segera hadir!\n\nPengaturan yang akan tersedia:\n1. Pengaturan Sistem\n2. Pengaturan User\n3. Pengaturan Akademik\n4. Backup Database");
-    }
-    
-    @FXML
     private void handleRefreshStats() {
         loadStatistics();
         loadQuickStats();
@@ -261,7 +256,7 @@ private void handleReports() {
             FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlPath));
             Parent root = loader.load();
             Stage stage = (Stage) welcomeLabel.getScene().getWindow();
-            stage.setScene(new Scene(root, 1200, 700));
+            stage.setScene(new Scene(root, 1000, 700));
             stage.setTitle("Sistem Akademik Sekolah - " + getPageTitle(fxmlPath));
             
             // Stop clock jika pindah scene

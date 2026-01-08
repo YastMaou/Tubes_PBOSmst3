@@ -8,12 +8,21 @@ import javafx.scene.Scene;
 import javafx.scene.control.ListView;
 import javafx.stage.Stage;
 
+
+// OOP Class & Object
 public class LaporanAktivitasController {
+
+
+    // encapsulation OOP Membungkus data dan method agar tidak bisa diakses sembarangan dari luar
 
     @FXML private ListView<String> list;
 
     @FXML
     public void initialize() {
+        loadData();
+    }
+
+    private void loadData() {
         list.setItems(FXCollections.observableArrayList(
             "Admin login - 01/01/2026 08:00",
             "Input nilai siswa - 01/01/2026 09:30",
@@ -22,9 +31,17 @@ public class LaporanAktivitasController {
     }
 
     @FXML
+    private void handleRefresh() {
+        loadData(); // nanti bisa diganti query DB
+    }
+
+    @FXML
     private void handleBack() throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("/fxml/admin/laporan_menu.fxml"));
+
+        // Inheritance OOP
         Stage stage = (Stage) list.getScene().getWindow();
-        stage.setScene(new Scene(root, 1200, 700));
+        stage.setScene(new Scene(root, 1000, 700));
+        stage.setTitle("Sistem Akademik Sekolah - Laporan Akademik");
     }
 }

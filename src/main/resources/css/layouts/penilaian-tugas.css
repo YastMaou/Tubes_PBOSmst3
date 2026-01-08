@@ -1,0 +1,248 @@
+/* =========================================================
+   PAGE LAYOUT
+========================================================= */
+
+.page-root {
+    -fx-background-color: #f8fafc;
+    -fx-padding: 20;
+}
+
+.page-header {
+    -fx-padding: 5 0 15 0;
+}
+
+.page-title {
+    -fx-font-size: 26px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #0f172a;
+}
+
+/* =========================================================
+   CARD
+========================================================= */
+
+.card {
+    -fx-background-color: white;
+    -fx-background-radius: 18;
+    -fx-border-radius: 18;
+    -fx-padding: 20;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.06), 14, 0, 0, 6);
+}
+
+/* =========================================================
+   SECTION & DETAIL
+========================================================= */
+
+.section-title {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #0f172a;
+}
+
+.detail-box {
+    -fx-background-color: #f1f5f9;
+    -fx-background-radius: 12;
+    -fx-padding: 12;
+}
+
+.detail-title {
+    -fx-font-weight: bold;
+    -fx-text-fill: #0f172a;
+}
+
+.label-muted {
+    -fx-text-fill: #64748b;
+    -fx-font-size: 12px;
+}
+
+.label-bold {
+    -fx-font-weight: bold;
+    -fx-text-fill: #0f172a;
+}
+
+/* =========================================================
+   BUTTON
+========================================================= */
+
+.button {
+    -fx-background-radius: 12;
+    -fx-font-weight: 600;
+    -fx-cursor: hand;
+}
+
+.button:hover {
+    -fx-opacity: 0.9;
+}
+
+.btn-primary {
+    -fx-background-color: #2563eb;
+    -fx-text-fill: white;
+    -fx-padding: 8 18;
+}
+
+.btn-secondary {
+    -fx-background-color: #94a3b8;
+    -fx-text-fill: white;
+    -fx-padding: 8 18;
+}
+
+.btn-outline {
+    -fx-background-color: white;
+    -fx-border-color: #2563eb;
+    -fx-border-width: 1;
+    -fx-text-fill: #2563eb;
+    -fx-padding: 6 16;
+}
+
+.btn-purple {
+    -fx-background-color: #7c3aed;
+    -fx-text-fill: white;
+    -fx-padding: 6 14;
+}
+
+.btn-success {
+    -fx-background-color: #22c55e;
+    -fx-text-fill: white;
+    -fx-padding: 8 18;
+}
+
+.btn-info {
+    -fx-background-color: #3b82f6;
+    -fx-text-fill: white;
+    -fx-padding: 8 18;
+}
+
+.btn-danger {
+    -fx-background-color: #ef4444;
+    -fx-text-fill: white;
+    -fx-padding: 8 18;
+}
+
+/* =========================================================
+   TAB PANE (BELUM DINILAI / SUDAH DINILAI)
+========================================================= */
+
+.tab-pane {
+    -fx-background-color: transparent;
+}
+
+.tab-pane .tab-header-area {
+    -fx-background-color: transparent;
+    -fx-padding: 0 0 14 0;
+}
+
+.tab-pane .headers-region {
+    -fx-background-color: transparent;
+}
+
+.tab-pane .tab-header-background {
+    -fx-background-color: transparent;
+}
+
+/* TAB DEFAULT */
+.tab-pane .tab {
+    -fx-background-color: #f1f5f9;
+    -fx-background-radius: 12;
+    -fx-padding: 8 24;
+    -fx-border-color: transparent;
+    -fx-cursor: hand;
+}
+
+/* TEXT TAB */
+.tab-pane .tab .tab-label {
+    -fx-font-size: 13px;
+    -fx-text-fill: #64748b;
+    -fx-font-weight: 600;
+}
+
+/* TAB AKTIF */
+.tab-pane .tab:selected {
+    -fx-background-color: white;
+    -fx-border-color: transparent;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.05), 6, 0, 0, 2);
+}
+
+.tab-pane .tab:selected .tab-label {
+    -fx-text-fill: #2563eb;
+    -fx-font-weight: bold;
+}
+
+/* HILANGKAN GARIS BAWAH TAB DEFAULT */
+.tab-pane .tab:selected .focus-indicator {
+    -fx-border-color: transparent;
+}
+
+/* AREA KONTEN TAB */
+.tab-pane .tab-content-area {
+    -fx-background-color: transparent;
+    -fx-padding: 10 0 0 0;
+}
+
+/* =========================================================
+   TABLE VIEW
+========================================================= */
+
+.table-view {
+    -fx-background-color: white;
+    -fx-background-radius: 14;
+    -fx-border-radius: 14;
+    -fx-border-color: #e5e7eb;
+}
+
+/* HEADER */
+.table-view .column-header-background {
+    -fx-background-color: #f8fafc;
+    -fx-border-color: #e5e7eb;
+    -fx-border-width: 0 0 1 0;
+}
+
+.table-view .column-header {
+    -fx-background-color: transparent;
+}
+
+.table-view .column-header .label {
+    -fx-font-weight: bold;
+    -fx-text-fill: #0f172a;
+}
+
+/* ROW */
+.table-row-cell {
+    -fx-background-color: white;
+    -fx-border-color: #f1f5f9;
+    -fx-border-width: 0 0 1 0;
+}
+
+.table-row-cell:filled:selected {
+    -fx-background-color: #e0ecff;
+}
+
+/* CELL */
+.table-cell {
+    -fx-padding: 10 8;
+    -fx-text-fill: #1f2937;
+}
+
+/* =========================================================
+   FORM INPUT
+========================================================= */
+
+.text-field,
+.text-area {
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+    -fx-border-color: #e5e7eb;
+    -fx-padding: 8 10;
+}
+
+.text-field:focused,
+.text-area:focused {
+    -fx-border-color: #2563eb;
+}
+
+/* =========================================================
+   ACTION BUTTON GROUP
+========================================================= */
+
+.action-group .button {
+    -fx-min-width: 120;
+}

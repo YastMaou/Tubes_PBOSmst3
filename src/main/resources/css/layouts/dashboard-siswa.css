@@ -1,0 +1,109 @@
+/* ===============================
+   ROOT & LAYOUT
+=============================== */
+
+.page-root {
+    -fx-background-color: #f5f7fb;
+    -fx-padding: 30;
+}
+
+.page-header {
+    -fx-padding: 10 20 20 20;
+}
+
+.page-content {
+    -fx-padding: 80 0 0 0;
+}
+
+/* ===============================
+   TEXT ATOMS
+=============================== */
+
+.page-title {
+    -fx-font-size: 26px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1f2d3d;
+}
+
+.subtitle {
+    -fx-font-size: 13px;
+    -fx-text-fill: #7f8c8d;
+}
+
+.card-title {
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50;
+}
+
+.card-icon {
+    -fx-font-size: 42px;
+}
+
+/* ===============================
+   CARD (ORGANISM)
+=============================== */
+
+.card {
+    -fx-background-color: white;
+    -fx-background-radius: 18;
+    -fx-padding: 35;
+    -fx-min-width: 240;
+    -fx-min-height: 240;
+    -fx-alignment: center;
+
+    /* Shadow lebih tegas */
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.12), 18, 0, 0, 8);
+}
+
+.dashboard-card {
+    -fx-spacing: 14;
+}
+
+/* Hover effect supaya terasa interaktif */
+.dashboard-card:hover {
+    -fx-effect: dropshadow(three-pass-box, rgba(37,99,235,0.25), 22, 0, 0, 10);
+    -fx-translate-y: -4;
+}
+
+/* ===============================
+   BUTTON ATOMS
+=============================== */
+
+.button {
+    -fx-cursor: hand;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+}
+
+/* Biru */
+.btn-info {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+    -fx-background-radius: 12;
+    -fx-padding: 8 20;
+}
+
+/* Ungu */
+.btn-purple {
+    -fx-background-color: #9b59b6;
+    -fx-text-fill: white;
+    -fx-background-radius: 12;
+    -fx-padding: 8 20;
+}
+
+/* Oranye */
+.btn-warning {
+    -fx-background-color: #f39c12;
+    -fx-text-fill: white;
+    -fx-background-radius: 12;
+    -fx-padding: 8 20;
+}
+
+/* Logout */
+.btn-danger {
+    -fx-background-color: #e74c3c;
+    -fx-text-fill: white;
+    -fx-background-radius: 12;
+    -fx-padding: 8 20;
+}
