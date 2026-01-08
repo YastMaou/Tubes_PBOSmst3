@@ -1,7 +1,25 @@
+
+/* THEME TOKENS */
+@import "theme/colors.css";
+@import "theme/typography.css";
+@import "theme/spacing.css";
+
+/* REUSABLE COMPONENTS */
+@import "components/buttons.css";
+@import "components/cards.css";
+@import "components/sidebar.css";
+
+/* PAGE-SPECIFIC (ADMIN ONLY) */
+@import "layouts/auth.css";               /* LOGIN */
+@import "layouts/admin-dashboard.css";    /* ADMIN */
+
+/* BASE */
+.root {
+    -fx-font-family: "Inter", "Segoe UI", Arial;
+}
 /* ================================
    GLOBAL ENTRY POINT (SAFE)
    LOGIN TIDAK TERPENGARUH
-================================ */
 
 /* THEME TOKENS */
 @import "theme/colors.css";
